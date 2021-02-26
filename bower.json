@@ -1,0 +1,22 @@
+{
+  "name": "Honey html",
+  "homepage": "https://github.com/eugene-sukhodolskiy/honey",
+  "authors": [
+    "Eugene Sukhodolskiy <eugene.sukhodolskiy@gmail.com>"
+  ],
+  "description": "Project for order, html, css and js",
+  "main": "index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize.css": "*",
+    "jquery": "3.*"
+  }
+}
