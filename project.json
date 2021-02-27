@@ -1,19 +1,19 @@
 {
-    "name": "Honey HTML",
-    "ver": "1.0",
-    "author": "E. Sukhodolskiy",
-    "tags": [
-        "honey",
-        "html",
-        "js",
-        "order"
-    ],
-    "type": "web",
-    "main_lang": "html",
-    "status": "open",
-    "project_color": "e89700",
-    "git_url": "https://github.com/eugene-sukhodolskiy/honey",
-    "release_url": null,
-    "favicon": null,
-    "description": "HTML for cms wordpress"
+	"name": "Honey HTML",
+	"ver": "1.0",
+	"author": "E. Sukhodolskiy",
+	"tags": [
+		"honey",
+		"html",
+		"js",
+		"order"
+	],
+	"type": "web",
+	"main_lang": "html",
+	"status": "open",
+	"project_color": "e89700",
+	"git_url": "https://github.com/eugene-sukhodolskiy/honey",
+	"release_url": null,
+	"favicon": null,
+	"description": "HTML for cms wordpress"
 }
