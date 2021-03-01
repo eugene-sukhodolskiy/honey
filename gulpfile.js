@@ -49,7 +49,7 @@ gulp.task('js:build', function () {
 	return gulp.src(path.src.js)
 		.pipe(rigger())
 		.pipe(sourcemaps.init()) //То же самое что и с js
-		.pipe(uglify())
+		// .pipe(uglify())
 		.pipe(sourcemaps.write())
 		.pipe(gulp.dest(path.build.js));
 });

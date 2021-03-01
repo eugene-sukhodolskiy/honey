@@ -1,5 +1,13 @@
 @card-border-radius: 18px;
 
+.bubl-sizing(@bubl-size){
+	left: calc(-@bubl-size / 3);
+	top: calc(-@bubl-size / 3);
+	width: @bubl-size;
+	height: @bubl-size;
+	line-height: @bubl-size;
+}
+
 .product-card{
 	width: 100%;
 	background-color: #fff;
@@ -11,20 +19,14 @@
 		height: 260px;
 
 		.bubl{
-			@bubl-size: 70px;
-
 			position: absolute;
-			left: calc(-@bubl-size / 3);
-			top: calc(-@bubl-size / 3);
 			z-index: 2;
 			background-color: @dcol;
-			width: @bubl-size;
-			height: @bubl-size;
 			text-align: center;
-			line-height: @bubl-size;
 			border-radius: 100%;
 			font-size: 22px;
 			color: @itcol;
+			.bubl-sizing(70px);
 		}
 
 		.product-label{
@@ -90,6 +92,57 @@
 
 		.btns{
 			margin-top: 20px;
+		}
+	}
+
+	&.mini{
+		background: transparent;
+		box-shadow: none;
+
+		.product-head{
+			width: 120px;
+			height: 120px;
+			float: left;
+			margin-right: 20px;
+
+			.product-thumb{
+				border-radius: 10px;
+			}
+
+			.product-label{
+				display: none;
+			}
+
+			.bubl{
+				.bubl-sizing(40px);
+				font-size: 13px;
+				font-weight: 600;
+			}
+		}
+
+		.product-body{
+			padding: 0;
+			padding-top: 10px;
+			text-align: left;
+
+			.product-title{
+				font-size: 21px;
+			}
+
+			.product-price{
+				font-size: 18px;
+				margin-top: 15px;
+			}
+
+			.btns{
+				margin-top: 15px;
+
+				.button-cancel{
+					position: absolute;
+					top: 0;
+					right: 0;
+				}
+			}
 		}
 	}
 }
