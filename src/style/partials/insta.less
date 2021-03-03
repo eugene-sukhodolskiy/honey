@@ -1,0 +1,86 @@
+.insta{
+	width: 100%;
+	background-color: @pcol;
+	margin-top: 80px;
+	padding: 30px 40px;
+	position: relative;
+
+	&:before, &:after{
+		content: '';
+		display: block;
+		position: absolute;
+		height: 28px;
+		z-index: 1;
+		width: 100%;
+		left: 0;
+	}
+
+	&:before{
+		background: url('../img/light-brown-wave-invers копия 2@1X.png') repeat-x;
+		top: -27px;
+	}
+
+	&:after{
+		background: url('../img/light-brown-wave-invers@1X.png') repeat-x;
+		bottom: -27px;
+	}
+ 
+	.profile{
+		margin-bottom: 30px;
+
+		.avatar{
+			width: 70px;
+			height: 70px;
+			background: url('../img/0417acce45aa4164d39cfefc68abf54c@1X.png') no-repeat;
+			padding: 6px;
+			background-size: contain;
+			float: left;
+			margin-right: 15px;
+		}
+
+		.name{
+			color: @itcol;
+			font-size: 24px;
+			line-height: 70px;
+		}
+	}
+
+	h3{
+		color: @itcol;
+		font-size: 36px;
+		line-height: 22px;
+	}
+
+	.post-carousel{
+		img{
+			border-radius: 15px;
+			width: 320px;
+			height: 320px;
+			object-fit: cover;
+			object-position: center;
+			padding: 10px;
+			cursor: pointer;
+
+			&:focus{
+				outline: none;
+			}
+		}
+	}
+}
+
+@media (max-width: 992px){
+	.insta{
+		padding: 20px 20px;
+
+		.profile{
+			.name{
+				
+			}
+		}
+
+		h3{
+			line-height: 40px;
+			margin-top: -20px;
+		}
+	}
+}
