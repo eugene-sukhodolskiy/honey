@@ -1,0 +1,170 @@
+.header{
+	width: 100%;
+	height: 80px;
+	background-color: @pcol;
+	color: @itcol;
+	position: relative;
+
+	.navigation{
+		list-style-type: none;
+		margin-top: 30px;
+		padding: 0;
+		width: max-content;
+
+		.navlist{
+			margin: 0;
+			padding: 0;
+
+			.navitem{
+				position: relative;
+				display: inline-block;
+				font-size: 18px;
+				margin-right: 20px;
+
+				.navlink{
+					color: #fff;
+
+					&:hover{
+						text-decoration: none;
+						color: @scol;
+					}
+				}
+
+				.navlist{
+					padding: 14px;
+					position: absolute;
+					background-color: #fff;
+					border-radius: 10px;
+					box-shadow: 2px 2px 3px 2px rgba(0,0,0,.1); 
+					top: 35px;
+					left: -15px;
+					width: max-content;
+					opacity: 0;
+					visibility: hidden;
+					transition-duration: @tdu;
+					transition-delay: @tdu;
+					transition-property: opacity, visibility;
+		
+					.navitem{
+						display: block;
+						margin-bottom: 20px;
+
+						.navlink{
+							color: #000;
+							&:hover{
+								color: @pcol;
+							}
+						}
+
+						&:last-of-type{
+							margin-bottom: 0;
+						}
+					}
+
+					& + .navlink{
+						position: relative;
+
+						&:after{
+							content: '';
+							display: block;
+							width: 25px;
+							height: 25px;
+							background: url(../img/chevron-down.png) center no-repeat;
+							background-size: contain;
+							position: absolute;
+							right: -30px;
+							top: -2px;
+						}
+					}
+				}
+
+				&:hover{
+					.navlist{
+						opacity: 1;
+						visibility: visible;
+					}
+				}
+			}
+		}
+
+
+		&.right-nav{
+			float: right;
+
+			.navitem{
+				margin-right: 10px;
+			}
+
+			.navitem:last-of-type{
+				margin-right: 0;
+			} 
+		}
+	}
+
+	.top-logo-wrap{
+		.top-logo-container{
+			max-width: 100%;
+			border-radius: 100%;
+			height: 300px;
+			width: 340px;
+			background-color: #fff;
+			position: absolute;
+			top: -150px;
+			box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, .1); 
+			text-align: center;
+
+			a{
+				.top-logo{
+					position: relative;
+					top: 150px;
+				}
+			}
+		}
+	}
+
+	.basket-button{
+		display: inline-block;
+		width: 60px;
+		height: 60px;
+		position: relative;
+		top: 15px;
+		transition-duration: @tdu;
+		transition-property: filter;
+
+		&:hover{
+			text-decoration: none;
+			color: @itcol;
+		}
+
+		.icon-container{
+			display: block;
+			background-color: @dcol;
+			width: 50px;
+			height: 50px;
+			border-radius: 100%;
+			color: @itcol;
+			font-size: 30px;
+			text-align: center;
+			line-height: 50px;
+		}
+
+		.counter{
+			color: @itcol;
+			background-color: @dcol;
+			border-radius: 100%;
+			width: 30px;
+			height: 30px;
+			display: inline-block;
+			text-align: center;
+			line-height: 30px;
+			font-size: 20px;
+			position: absolute;
+			top: 25px;
+			right: -3px;
+		}
+
+		&:hover{
+			filter: brightness(1.1);
+		}
+	}
+}
