@@ -1,0 +1,132 @@
+.footer{
+	padding-top: 60px;
+	background-color: @scol;
+
+	.logo{
+		width: 215px;
+		max-width: 100%;
+	}
+
+	.navigation{
+		.navlist{
+			padding: 0;
+			list-style-type: none;
+
+			.navitem{
+				display: inline-block;
+				font-size: 26px;
+				margin-right: 10px;
+				margin-bottom: 10px;
+
+				.navlink{
+					color: #000;
+				}
+			}
+		}
+	}
+
+	.contact-links{
+		list-style-type: none;
+		padding: 0;
+		margin-top: 20px;
+
+		li{
+			display: inline-block;
+			margin-right: 15px;
+
+			.soc-link{
+				display: inline-block;
+				width: 42px;
+				height: 42px;
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: contain;
+				opacity: .6;
+				transition-property: opacity;
+				transition-duration: @tdu;
+
+				&.telegram{
+					background-image: url('../img/telegram@1X.png');
+				}
+
+				&.viber{
+					background-image: url('../img/viber@1X.png');
+				}
+
+				&.instagram{
+					background-image: url('../img/instagram (4)@1X.png');
+				}
+
+				&.facebook{
+					background-image: url('../img/facebook (4)@1X.png');
+				}
+
+				&:hover{
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	.contact-info{
+		text-align: right;
+		margin-top: 20px;
+
+		.phone-group{
+			.icon-container{
+				position: relative;
+				background: url('../img/call@1X.png') no-repeat;
+				background-position: center right;
+			}
+
+			.phone{
+				margin-bottom: 15px;
+			}
+
+			.phone-info{}
+		}
+
+		.email{
+			margin-top: 20px;
+		}
+	}
+
+	.bottom-line{
+		width: 100%;
+		border-top: 1px solid rgba(0, 0, 0, .1);
+		margin-top: 30px;
+		padding-top: 30px;
+		padding-bottom: 30px;
+
+		a{
+			color: @tcol;
+		}
+
+		.copyright{
+			text-align: center;
+		}
+
+		.address{
+			text-align: right;
+		}
+	}
+}
+
+@media (max-width: 768px){
+	.footer{
+		.bottom-line{
+			div{
+				margin-top: 15px;
+				text-align: center;
+
+				&:first-of-type{
+					margin-top: 0;
+				}
+			}
+
+			.address{
+				text-align: center;
+			}
+		}
+	}
+}
