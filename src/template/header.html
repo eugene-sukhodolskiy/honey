@@ -1,7 +1,14 @@
 <header class="header">
 	<div class="container">
 		<div class="row">
-			<div class="col-4">
+			<div class="col-4 top-logo-wrap mob">
+				<div class="top-logo-container">
+					<a href="/">
+						<img src="/build/img/top-logo.png" alt="Logo" class="top-logo">
+					</a>
+				</div>
+			</div>
+			<div class="col-12 col-xl-4">
 				<nav class="navigation left-nav">
 					<ul class="navlist">
 						<li class="navitem">
@@ -37,13 +44,22 @@
 				</div>
 			</div>
 
-			<div class="col-4">
+			<div class="col-12 col-xl-4">
 				<a href="#" class="basket-button">
 					<span class="icon-container">
 						<ion-icon name="bag-handle-outline"></ion-icon>
 					</span>
 					<span class="counter">6</span>
 				</a>
+
+				<button class="menu" data-state="close">
+					<span class="state-open">
+						<ion-icon name="menu-outline"></ion-icon>
+					</span>
+					<span class="state-close">
+						<ion-icon name="close-outline"></ion-icon>
+					</span>
+				</button>
 
 				<nav class="navigation right-nav">
 					<ul class="navlist">

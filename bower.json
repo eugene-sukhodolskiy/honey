@@ -18,6 +18,7 @@
   "dependencies": {
     "normalize.css": "latest",
     "bootstrap": "latest",
-    "jquery": "latest"
+    "jquery": "latest",
+    "slick-carousel": "^1.8.1"
   }
 }

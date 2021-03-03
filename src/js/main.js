@@ -2,6 +2,7 @@ $(document).ready(function(){
 	console.log("init app!"); 
 
 	buyControlInit();
+	mobMenuInit();
 	
 	$('.buy').on('click', function(e){
 		if(buyBtnClickFix(this)){
@@ -12,6 +13,21 @@ $(document).ready(function(){
 		console.log('buy');
 	});
 });
+
+function mobMenuInit(){
+	$('.header .menu').on('click', function(){
+		const header = $('.header');
+		const menuBtn = $(this);
+
+		if(!header.hasClass('mob')){
+			header.addClass('mob');
+			menuBtn.attr('data-state', 'open');
+		}else{
+			header.removeClass('mob');
+			menuBtn.attr('data-state', 'close');
+		}
+	});
+}
 
 function buyBtnClickFix(btn){
 	const buyControl = $(btn).find('.buy-control');
