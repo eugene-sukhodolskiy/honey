@@ -1,0 +1,42 @@
+.weight-item-size(@size){
+	width: @size;
+	height: @size;
+}
+
+.weight-selector{
+	&:hover .weight{
+		opacity: .6;
+	}
+
+	.weight{
+		.weight-item-size(75px);
+		display: inline-block;
+		background: url('../img/weight.png') no-repeat;
+		background-size: contain;
+		background-position: center bottom;
+		text-align: center;
+		cursor: pointer;
+		transition-duration: @tdu;
+		transition-property: opacity;
+		position: relative;
+
+		.value{
+			bottom: 10px;
+			left: 0;
+			width: 100%;
+			font-weight: bold;
+			position: absolute;
+			display: inline-block;
+		}
+
+		&:hover{
+			opacity: 1;
+		}
+	}
+
+	.unit{
+		font-size: 18px;
+		display: inline-block;
+		margin-left: 10px; 
+	}
+}

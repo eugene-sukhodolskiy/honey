@@ -6,7 +6,7 @@ var gulp = require('gulp'),
 		cssmin = require('gulp-minify-css'),
 		uglify = require('gulp-uglify'),
 		prefixer = require('gulp-autoprefixer'),
-		rigger = require('gulp-rigger'),
+		fileinclude = require('gulp-file-include'),
 		less = require('gulp-less');
 
 var path = {
@@ -31,7 +31,10 @@ var path = {
 
 gulp.task('html:build', function () {
 	return gulp.src(path.src.html)
-		.pipe(rigger())
+		.pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
 		.pipe(gulp.dest(path.build.html));
 });
 
@@ -47,7 +50,6 @@ gulp.task('style:build', function () {
 
 gulp.task('js:build', function () {
 	return gulp.src(path.src.js)
-		.pipe(rigger())
 		.pipe(sourcemaps.init()) //То же самое что и с js
 		// .pipe(uglify())
 		.pipe(sourcemaps.write())

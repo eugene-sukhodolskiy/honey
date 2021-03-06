@@ -1,0 +1,29 @@
+<div class="weight-selector">
+	<div class="weight" data-value="0.5">
+		<span class="value"></span>
+	</div>
+	<div class="weight" data-value="0.2">
+		<span class="value"></span>
+		<!-- <span class="unit">кг</span> -->
+	</div>
+	<div class="weight" data-value="0.1">
+		<span class="value"></span>
+		<!-- <span class="unit">кг</span> -->
+	</div>
+	<span class="unit">кг</span>
+</div>
+
+<script>
+	$(document).ready(function(){
+		const witems = $('.weight-selector .weight');
+		for(let item of witems){
+			item = $(item);
+			const val = item.attr('data-value');
+			const size = 50 + (50 * val);
+			item.find('.value').html(val);
+			item.css({
+				width: `${size}px`,
+			});
+		}
+	});
+</script>
