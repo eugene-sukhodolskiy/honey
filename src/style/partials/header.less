@@ -116,6 +116,12 @@
 			font-size: 30px;
 			text-align: center;
 			line-height: 50px;
+
+			.basket-icon{
+				position: relative;
+				z-index: 1;
+				top: 5px;
+			}
 		}
 
 		.counter{
@@ -126,7 +132,7 @@
 			height: 30px;
 			display: inline-block;
 			text-align: center;
-			line-height: 30px;
+			line-height: 32px;
 			font-size: 20px;
 			position: absolute;
 			top: 25px;
@@ -148,7 +154,7 @@
 		position: fixed;
 		top: 15px;
 		z-index: 1;
-		right: ~"calc(20% - 70px)";
+		right: ~"calc(20% - 60px)";
 		color: @itcol;
 
 		&[data-state="close"]{
@@ -233,27 +239,30 @@
 }
 
 @media (max-width: 1200px){
+	@header-height: 70px;
+
 	.header{
 		position: fixed;
 		top: 0;
-		overflow: hidden;
 		z-index: 50;
+		height: @header-height;
 
-		&:after{
-			display: none;
+		.container{
+			height: inherit;
+			overflow: hidden;
 		}
 
 		.top-logo-wrap{
 			display: none;
 
 			.top-logo-container{
-				width: 200px;
-				height: 180px;
-				top: -80px;
+				width: 130px;
+				height: 130px;
+				top: -60px;
 
 				a{
 					.top-logo{
-						top: 80px;
+						top: 64px;
 						max-width: 60%;
 					}
 				}
@@ -262,23 +271,33 @@
 			&.mob{
 				display: block;
 			}
+
+		}
+		
+		&:after{
+			top: @header-height;
+			background-size: cover;
+			height: 20px;
 		}
 
 		.navigation{
+			@margin-top: 20px;
+
 			margin-left: 30px;
+			margin-top: @margin-top;
 
 			.navlist{
 				.navitem{
 					display: block;
-					margin-top: 30px;
-					font-size: 24px;
+					margin-top: @margin-top;
+					font-size: 20px;
 
 					.navlink{}
 
 					.navlist{
 						& + .navlink{
 							display: block;
-							margin-top: 30px;
+							margin-top: @margin-top;
 
 							&:after{
 								width: 30px;
@@ -311,4 +330,8 @@
 			right: 20%;
 		}
 	}
+}
+
+@media (max-width: 380px){
+	
 }

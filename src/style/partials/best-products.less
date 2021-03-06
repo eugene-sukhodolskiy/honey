@@ -1,9 +1,13 @@
 .best-products{
-	margin-top: 70px;
+	margin-top: 40px;
+
+	.products-carousel-container{
+		padding: 0;
+	}
 
 	.block-title{
 		position: relative;
-		margin-bottom: 60px;
+		margin-bottom: 10px;
 
 		&:before{
 			content: '';
@@ -19,7 +23,80 @@
 		}
 	}
 
-	.product-card{
-		margin-bottom: 40px;
+	.products-carousel{
+		.product-card{
+			margin: 30px 15px;
+
+			&:first-of-type{
+				margin-left: 25px;
+			}
+		}
+	}
+}
+
+@media (max-width: 1200px){
+	.best-products{
+		.product-card{
+			.product-body{
+				.btns{
+					margin-top: 15px;
+
+					.button{
+						font-size: 15px;
+						padding: 8px 15px;
+						line-height: 22px;
+						border-radius: 30px;
+
+						.buy-control{
+							.control-minus, .control-plus{
+								font-size: 15px;
+							}
+							
+							.buy-value{
+								min-width: initial;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 768px){
+	.best-products {
+		.products-carousel-container{
+			padding: 0;
+			margin: 0 auto;
+
+			.products-carousel {
+				.product-card{
+					margin: 20px 10px;
+
+					.product-body{
+						.btns{
+							margin-top: 15px;
+
+							.button{
+								font-size: 12px;
+								padding: 0 12px;
+								line-height: 22px;
+								border-radius: 25px;
+
+								.buy-control{
+									.control-minus, .control-plus{
+										font-size: 12px;
+									}
+									
+									.buy-value{
+										min-width: initial;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 }
