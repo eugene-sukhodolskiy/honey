@@ -1,5 +1,5 @@
 .carousel{
-	@carousel-height: 350px;
+	@carousel-height: 465px;
 
 	width: 100%;
 	height: @carousel-height;
@@ -87,8 +87,15 @@
 	}
 }
 
+@media (max-width: 1200px){
+	.carousel{
+		margin-top: -22px;
+	}
+}
+
 @media (max-width: 768px){
 	@carousel-height: 400px;
+
 	.carousel{
 		height: @carousel-height;
 

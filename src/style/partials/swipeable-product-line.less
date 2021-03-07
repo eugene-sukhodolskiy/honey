@@ -37,6 +37,11 @@
 						.buy-control{
 							.control-minus, .control-plus{
 								font-size: 15px;
+								top: -1px;
+							}
+
+							.control-plus{
+								padding-left: 0;
 							}
 							
 							.buy-value{
@@ -65,20 +70,43 @@
 							margin-top: 15px;
 
 							.button{
-								font-size: 12px;
-								padding: 0 12px;
-								line-height: 22px;
+								font-size: 14px;
+								padding-top: 8px;
+								padding-bottom: 8px;
+								line-height: 29px;
 								border-radius: 25px;
 
 								.buy-control{
 									.control-minus, .control-plus{
-										font-size: 12px;
+										font-size: 14px;
+									}
+
+									.control-plus{
+										padding-left: 0;
 									}
 									
 									.buy-value{
 										min-width: initial;
 									}
 								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 400px){
+	.swipeable-product-line{
+		.products-carousel-container{
+			.products-carousel {
+				.product-card{
+					.product-body{
+						.btns{
+							.button{
+								padding: 8px 5px;
 							}
 						}
 					}

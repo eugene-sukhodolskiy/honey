@@ -128,7 +128,7 @@
 			<span class="value"></span> 
 		</div> 
 	
-	<span class="unit">кг</span>
+	<span class="unit">грамм</span>
 </div>
   
 <script>
@@ -138,7 +138,7 @@
 			item = $(item);
 			const val = item.attr('data-value');
 			const size = 50 + (50 * val);
-			item.find('.value').html(val);
+			item.find('.value').html(val * 1000);
 			item.css({
 				width: `${size}px`,
 			});
@@ -167,7 +167,7 @@
 					</div>
 					<div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
 						<div class="buy">
-							<button class="button buy">
+							<button class="button lg buy">
 	Купить
 	<span class="buy-control" data-value="1" data-max="10">
 		<span class="control-minus">
@@ -229,7 +229,7 @@
 			</span>
 		</div>
 		<div class="btns">
-			<button class="button buy">
+			<button class="button @@additionClass buy">
 	Купить
 	<span class="buy-control" data-value="1" data-max="10">
 		<span class="control-minus">
@@ -275,7 +275,7 @@
 			</span>
 		</div>
 		<div class="btns">
-			<button class="button buy">
+			<button class="button @@additionClass buy">
 	Купить
 	<span class="buy-control" data-value="1" data-max="10">
 		<span class="control-minus">
@@ -321,7 +321,7 @@
 			</span>
 		</div>
 		<div class="btns">
-			<button class="button buy">
+			<button class="button @@additionClass buy">
 	Купить
 	<span class="buy-control" data-value="1" data-max="10">
 		<span class="control-minus">
@@ -367,7 +367,7 @@
 			</span>
 		</div>
 		<div class="btns">
-			<button class="button buy">
+			<button class="button @@additionClass buy">
 	Купить
 	<span class="buy-control" data-value="1" data-max="10">
 		<span class="control-minus">

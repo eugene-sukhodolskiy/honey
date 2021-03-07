@@ -155,9 +155,9 @@
 		background-color: transparent;
 		border: 0;
 		position: fixed;
-		top: 15px;
+		top: 9px;
 		z-index: 1;
-		right: ~"calc(20% - 60px)";
+		right: ~"calc(20% - 65px)";
 		color: @itcol;
 
 		&[data-state="close"]{
@@ -242,7 +242,7 @@
 }
 
 @media (max-width: 1200px){
-	@header-height: 70px;
+	@header-height: 55px;
 
 	.header{
 		position: fixed;
@@ -262,6 +262,7 @@
 				width: 130px;
 				height: 130px;
 				top: -60px;
+				position: fixed;
 
 				a{
 					.top-logo{
@@ -279,8 +280,8 @@
 		
 		&:after{
 			top: @header-height;
-			background-size: cover;
-			height: 20px;
+			background-size: contain;
+			height: 15px;
 		}
 
 		.navigation{
@@ -329,8 +330,17 @@
 
 		.basket-button{
 			position: fixed;
-			top: 12px;
+			top: 7px;
 			right: 20%;
+			z-index: 2;
+		}
+	}
+}
+
+@media (max-width: 768px){
+	.header{
+		&:after{
+			background-size: cover;
 		}
 	}
 }

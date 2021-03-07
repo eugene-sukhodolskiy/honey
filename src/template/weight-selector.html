@@ -4,7 +4,7 @@
 			<span class="value"></span> 
 		</div> 
 	}
-	<span class="unit">кг</span>
+	<span class="unit">грамм</span>
 </div>
   
 <script>
@@ -14,7 +14,7 @@
 			item = $(item);
 			const val = item.attr('data-value');
 			const size = 50 + (50 * val);
-			item.find('.value').html(val);
+			item.find('.value').html(val * 1000);
 			item.css({
 				width: `${size}px`,
 			});
