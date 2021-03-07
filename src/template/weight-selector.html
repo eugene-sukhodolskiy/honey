@@ -4,11 +4,9 @@
 	</div>
 	<div class="weight" data-value="0.2">
 		<span class="value"></span>
-		<!-- <span class="unit">кг</span> -->
 	</div>
 	<div class="weight" data-value="0.1">
 		<span class="value"></span>
-		<!-- <span class="unit">кг</span> -->
 	</div>
 	<span class="unit">кг</span>
 </div>
@@ -25,5 +23,11 @@
 				width: `${size}px`,
 			});
 		}
+
+		$(witems).on('click', function(){
+			$(witems).removeClass('selected');
+			$(this).addClass('selected');
+			$('.weight-selector').addClass('already-selected');
+		});
 	});
 </script>

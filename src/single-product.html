@@ -1,0 +1,52 @@
+@@include('./template/head.html') 
+@@include('./template/header.html') 
+
+<div class="page-wrap single-product-page">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 col-lg-5 col-xl-5">
+				<div class="product-img-container">
+					<img src="http://html.honey.local/build/img/1@1X.png" alt="" class="product-img">
+				</div>
+			</div>
+			<div class="col-12 col-lg-7 col-xl-7">
+				<div class="about-product">
+					<h1 class="title">Название товара</h1>
+					<div class="description">
+						<p>Поживна (харчова) цінність 100г продукту: білки - 3,7г, жири - 24,2г, вуглеводи - 55,9г. Енергетична цінність (калорійність) 100г продукту: 456 ккал / 1907 кДж.</p>
+						<p>Термін придатності: 6 місяців.</p>
+						<p>
+							Прочий текст, который может понадобиться. Количество текста в общемто никак не ограничено. Можно писать буквально что угодно
+						</p>
+					</div>
+					<div class="weight-container">
+						@@include('./template/weight-selector.html')
+					</div>
+				</div>
+				<div class="row price-and-buy-container">
+					<div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+						<div class="price">
+							<span class="value">120</span>
+							<span class="old-value">180</span>
+							<span class="unit">грн</span>
+						</div>
+					</div>
+					<div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+						<div class="buy">
+							@@include('./template/buy-btn.html', {
+								"btntext": "Купить"
+							})
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>		
+	</div>
+
+	<div class="container">
+		@@include('./template/recommended-products.html')	
+	</div>
+</div>
+
+@@include('./template/insta.html') 
+@@include('./template/footer.html') 

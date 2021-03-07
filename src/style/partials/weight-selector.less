@@ -4,8 +4,10 @@
 }
 
 .weight-selector{
-	&:hover .weight{
-		opacity: .6;
+	&:hover, &.already-selected{
+	 .weight{
+			opacity: .5;
+		}
 	}
 
 	.weight{
@@ -29,8 +31,8 @@
 			display: inline-block;
 		}
 
-		&:hover{
-			opacity: 1;
+		&:hover, &.selected{
+			opacity: 1; 
 		}
 	}
 
