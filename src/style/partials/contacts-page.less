@@ -1,0 +1,58 @@
+.contacts-page{
+	margin: 100px 0;
+
+	.contact-form{
+		.title{
+			margin-bottom: 25px;
+		}
+	}
+
+	.contact-data{
+		ion-icon{
+			position: relative;
+			top: 3px;
+			display: inline-block;
+			margin-right: 3px;
+		}
+
+		.text{
+			font-family: Arial;
+		}
+
+		.contact-info{
+			font-size: 18px;
+
+			.phone-group{
+				margin-bottom: 15px;
+
+				.phone{
+					margin-bottom: 5px;
+				}
+
+				.phone-info{
+					font-size: 15px;
+					padding-left: 25px;
+					color: #777;
+				}
+			}
+
+			.email{
+				margin-bottom: 5px;
+			}
+
+			.location{
+				margin-bottom: 5px;
+			}
+		}
+	}
+}
+
+@media (max-width: 768px){
+	.contacts-page{
+		margin-top: 60px;
+
+		.contact-data{
+			margin-top: 40px;
+		}
+	}
+}

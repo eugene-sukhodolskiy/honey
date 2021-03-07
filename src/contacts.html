@@ -1,0 +1,68 @@
+@@include('./template/head.html') 
+@@include('./template/header.html') 
+
+<div class="page-wrap contacts-page">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 col-lg-6 col-xl-6">
+				<div class="contact-form">
+					<h3 class="title">Напиши нам прямо зараз</h3>
+					<form action="" id="contact">
+						<div class="input-group">
+							<input type="text" name="name" class="input" placeholder="Ваше им`я *" required="">
+						</div>
+						<div class="input-group">
+							<input type="phone" name="phone" class="input" placeholder="Контактний номер телефону *" required="">
+						</div>
+						<div class="input-group">
+							<input type="email" name="email" class="input" placeholder="Контактний E-mail *" required="">
+						</div>
+						<div class="input-group">
+							<textarea name="email" class="input" placeholder="Текст листа" required=""></textarea>
+						</div>
+						<div class="input-group">
+							<button class="button">
+								Написати 
+								<ion-icon name="send-outline"></ion-icon>
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="col-12 col-lg-6 col-xl-6">
+				<div class="contact-data">
+					<h3 class="title">
+						Нашi контакти
+					</h3>
+					<p class="text">Блок текста, на всякий случай. Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, iusto. Possimus molestias blanditiis error illo assumenda nisi inventore eius architecto.</p>
+					<div class="contact-info">
+						<div class="phone-group">
+							<div class="phone">
+								<ion-icon name="call-outline"></ion-icon>
+								+38 063 716-11-95
+							</div>
+							<div class="phone">
+								<ion-icon name="call-outline"></ion-icon>
+								+38 067 716-11-94
+							</div>
+							<div class="phone-info">
+								Пн-Пт 9:00 - 20:00
+							</div>
+						</div>
+						<div class="email">
+							<ion-icon name="mail-outline"></ion-icon>
+							support.vichniy.med@gmail.com			
+						</div>
+						<div class="location">
+							<ion-icon name="location-outline"></ion-icon>
+							м. Житомир, вул. Шевська, 12
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+@@include('./template/insta.html') 
+@@include('./template/footer.html') 
