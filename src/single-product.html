@@ -20,7 +20,13 @@
 						</p>
 					</div>
 					<div class="weight-container">
-						@@include('./template/weight-selector.html')
+						@@include('./template/weight-selector.html', {
+							'weights': [
+								{'val': 0.5, 'selected': true},
+								{'val': 0.2},
+								{'val': 0.1}
+							]
+						})
 					</div>
 				</div>
 				<div class="row price-and-buy-container">

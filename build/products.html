@@ -103,18 +103,22 @@
 			</div>
 			<div class="col-12 col-lg-6 col-xl-6">
 				<div class="weight-selector">
-	<div class="weight" data-value="0.5">
-		<span class="value"></span>
-	</div>
-	<div class="weight" data-value="0.2">
-		<span class="value"></span>
-	</div>
-	<div class="weight" data-value="0.1">
-		<span class="value"></span>
-	</div>
+	
+		<div class="weight selected" data-value="0.5">
+			<span class="value"></span> 
+		</div> 
+	
+		<div class="weight " data-value="0.2">
+			<span class="value"></span> 
+		</div> 
+	
+		<div class="weight " data-value="0.1">
+			<span class="value"></span> 
+		</div> 
+	
 	<span class="unit">кг</span>
 </div>
-
+  
 <script>
 	$(document).ready(function(){
 		const witems = $('.weight-selector .weight');
@@ -126,6 +130,10 @@
 			item.css({
 				width: `${size}px`,
 			});
+
+			if(item.hasClass('selected')){
+				$('.weight-selector').addClass('already-selected');
+			}
 		}
 
 		$(witems).on('click', function(){
@@ -135,7 +143,7 @@
 		});
 	});
 </script>
-			</div>
+			</div> 
 			<div class="col-6 col-lg-4 col-xl-3 product-line-item">
 	<div class="product-card">
 	<div class="product-head">

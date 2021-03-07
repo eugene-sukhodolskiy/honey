@@ -1,16 +1,12 @@
 <div class="weight-selector">
-	<div class="weight" data-value="0.5">
-		<span class="value"></span>
-	</div>
-	<div class="weight" data-value="0.2">
-		<span class="value"></span>
-	</div>
-	<div class="weight" data-value="0.1">
-		<span class="value"></span>
-	</div>
+	@@for(let i=0; i<weights.length; i++){
+		<div class="weight `+(weights[i].selected === true ? 'selected' : '')+`" data-value="`+weights[i].val+`">
+			<span class="value"></span> 
+		</div> 
+	}
 	<span class="unit">кг</span>
 </div>
-
+  
 <script>
 	$(document).ready(function(){
 		const witems = $('.weight-selector .weight');
@@ -22,6 +18,10 @@
 			item.css({
 				width: `${size}px`,
 			});
+
+			if(item.hasClass('selected')){
+				$('.weight-selector').addClass('already-selected');
+			}
 		}
 
 		$(witems).on('click', function(){
