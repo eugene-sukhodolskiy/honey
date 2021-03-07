@@ -1,0 +1,79 @@
+@@include('./template/head.html') 
+@@include('./template/header.html') 
+
+<div class="page-wrap reviews-page">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 col-lg-10 col-xl-10 offset-lg-1 offset-xl-1">
+				<h3 class="page-title">Реальнi вiдгуки про нас</h3>
+			</div>
+			<div class="col-12">
+				<div class="col-12 col-lg-10 col-xl-10 offset-lg-1 offset-xl-1 main">
+					<div class="row">
+						<div class="col-12 col-md-6 col-lg-6 col-xl-6">
+							<div class="review-screen">
+								<img src="./img/iphone.png" alt="" class="screen-placeholder">
+								<img src="./img/screen-review.png" alt="" class="screen">
+							</div>
+						</div>
+						<div class="col-12 col-md-6 col-lg-6 col-xl-6">
+							<div class="reviews-list">
+								<ul>
+									<li class="review-item" data-screen="./img/screen-review.png">
+										<img src="https://scontent-iev1-1.cdninstagram.com/v/t51.2885-19/s320x320/135012251_214991996903648_9130700833109455468_n.jpg?tp=1&_nc_ht=scontent-iev1-1.cdninstagram.com&_nc_ohc=cyBeNlCpRcEAX_SJSkd&oh=cfda95cc8d4df6ee93b691994c1bba8f&oe=606E7765" alt="" class="insta-avatar">
+										<div class="insta-info">
+											<a href="https://www.instagram.com/viktoria.heinz/" target="_blank" class="insta-link">@viktoria.heinz</a>
+											<div class="date">29.01.2021</div>
+										</div>
+									</li>
+									<li class="review-item" data-screen="./img/screen-review-2.png">
+										<img src="https://scontent-iev1-1.cdninstagram.com/v/t51.2885-19/s320x320/152769658_261149245584287_9078897661855453650_n.jpg?tp=1&_nc_ht=scontent-iev1-1.cdninstagram.com&_nc_ohc=8QbXhpZRoLMAX9OFCFx&oh=eadf90531f8671512dc9e9d016216450&oe=60706AF3" alt="" class="insta-avatar">
+										<div class="insta-info">
+											<a href="https://www.instagram.com/aida.noova/" target="_blank" class="insta-link">@aida.noova</a>
+											<div class="date">24.02.2021</div>
+										</div>
+									</li>
+									<li class="review-item" data-screen="./img/screen-review.png">
+										<img src="https://scontent-iev1-1.cdninstagram.com/v/t51.2885-19/s320x320/154498855_3729315080497042_3671990055680355440_n.jpg?tp=1&_nc_ht=scontent-iev1-1.cdninstagram.com&_nc_ohc=yqeC6r8YIfQAX9wTBtC&oh=1db43eee5ddead1df44fe25e57df21f8&oe=606D5448" alt="" class="insta-avatar">
+										<div class="insta-info">
+											<a href="https://www.instagram.com/bo.ce.ya/" target="_blank" class="insta-link">@bo.ce.ya</a>
+											<div class="date">26.02.2021</div>
+										</div>
+									</li>
+									<li class="review-item" data-screen="./img/screen-review-2.png">
+										<img src="https://scontent-iev1-1.cdninstagram.com/v/t51.2885-19/s320x320/19227297_322477038172378_2994205075670302720_a.jpg?tp=1&_nc_ht=scontent-iev1-1.cdninstagram.com&_nc_ohc=sedtV9gcr6IAX8isF8E&oh=3d6c8d76e0100747cd7345e675de95d8&oe=606F2A86" alt="" class="insta-avatar">
+										<div class="insta-info">
+											<a href="https://www.instagram.com/lyapotasasha/" target="_blank" class="insta-link">@lyapotasasha</a>
+											<div class="date">8.03.2021</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	$(document).ready(function(){
+		const reviews = $('.review-item');
+		const screenViewer = $('.screen');
+		$(reviews[0]).addClass('active');
+		screenViewer.attr('src', $(reviews[0]).attr('data-screen'));
+
+		reviews.on('click', function(){
+			const review = $(this);
+			const screen = review.attr('data-screen');
+			reviews.removeClass('active');
+			review.addClass('active');
+
+			screenViewer.attr('src', screen);
+		});
+	});
+</script>
+
+@@include('./template/insta.html') 
+@@include('./template/footer.html') 

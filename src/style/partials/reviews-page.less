@@ -1,0 +1,170 @@
+.reviews-page{
+	.main{
+		background: url('../img/insta-bg.png') no-repeat;
+		background-size: 270px auto;
+		background-position: 0px 75px;
+	}
+
+	.page-title{
+		margin-bottom: 50px;
+	}
+
+	.review-screen{
+		width: 220px;
+		height: 445px;
+		overflow: hidden;
+		position: relative;
+		float: right;
+		margin-right: 20px;
+
+		.screen-placeholder{
+			width: 100%;
+			height: auto;
+			position: absolute;
+			top: 0;
+			z-index: 2;
+		}
+		.screen{
+			width: ~'calc(100% - 20px)';
+			margin-left: 10px;
+			border-radius: 40px;
+			margin-top: 25px;
+			z-index: 1;
+		}
+	}
+
+	.reviews-list{
+		ul{
+			padding: 0;
+			list-style-type: none;
+
+			.review-item{
+				clear: both;
+				margin-bottom: 30px;
+
+				.insta-avatar{
+					display: inline-block;
+					width: 70px;
+					height: 70px;
+					padding: 7px;
+					border-radius: 100%;
+					background: url('../img/0417acce45aa4164d39cfefc68abf54c@1X.png') no-repeat;
+					background-size: contain;
+					background-position: 0 0;
+					float: left;
+					margin-right: 20px;
+					top: 0;
+					left: 0;
+					position: relative;
+					transition-duration: @tdu;
+					transition-property: width, height, top, left;
+				}
+
+				.insta-link{
+					display: inline-block;
+					margin-top: 16px;
+					font-size: 20px;
+					transition-duration: @tdu;
+					transition-property: margin-left;
+				}
+
+				.date{
+					font-size: 13px;
+					color: #666;
+					margin-top: 5px;
+					display: block;
+					transition-duration: @tdu;
+					transition-property: margin-left;
+				}
+
+				&:hover, &.active{
+					.insta-avatar{
+						width: 80px;
+						height: 80px;
+						top: -5px;
+						left: -5px;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+@media (max-width: 1200px){
+	.reviews-page{
+		.main{
+			background: none;
+		}
+
+		.review-screen{
+			float: none;
+
+			.screen-placeholder{
+
+			}
+
+			.screen{
+
+			}
+		}
+
+		.reviews-list{
+			ul{
+				.review-item{
+					.insta-avatar{
+					}
+
+					.insta-link{
+					}
+
+					.date{
+					}
+
+					&:hover, &.active{
+						.insta-avatar{
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 420px){ 
+	.reviews-page{
+		.review-screen{
+			text-align: center;
+			margin-left: auto;
+			margin-right: auto;
+
+			.screen-placeholder{
+				display: inline-block;
+			}
+
+			.screen{
+				display: inline-block;
+			}
+		}
+
+		.reviews-list{
+			ul{
+				.review-item{
+					.insta-avatar{
+					}
+
+					.insta-link{
+					}
+
+					.date{
+					}
+
+					&:hover, &.active{
+						.insta-avatar{
+						}
+					}
+				}
+			}
+		}
+	}
+}
