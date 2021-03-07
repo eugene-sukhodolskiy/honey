@@ -4,10 +4,15 @@
 <div class="page-wrap contacts-page">
 	<div class="container">
 		<div class="row">
-			<div class="col-12 col-lg-6 col-xl-6">
+			<div class="col-12 col-lg-5 col-xl-5">
 				<div class="contact-form">
 					<h3 class="title">Напиши нам прямо зараз</h3>
-					<form action="" id="contact">
+					<form action="" id="contact" method="post">
+						<div class="notification">
+							<h3 class="msg">Дякую за ваш меседж</h3>
+							<ion-icon name="happy-outline"></ion-icon>
+						</div>
+
 						<div class="input-group">
 							<input type="text" name="name" class="input" placeholder="Ваше им`я *" required="">
 						</div>
@@ -18,7 +23,7 @@
 							<input type="email" name="email" class="input" placeholder="Контактний E-mail *" required="">
 						</div>
 						<div class="input-group">
-							<textarea name="email" class="input" placeholder="Текст листа" required=""></textarea>
+							<textarea name="msg" class="input" placeholder="Текст листа" required=""></textarea>
 						</div>
 						<div class="input-group">
 							<button class="button">
@@ -27,9 +32,41 @@
 							</button>
 						</div>
 					</form>
+
+					<script>
+						$(document).ready(function(){
+							const form = $('#contact');
+							const inputs = form.find('.input');
+							const url = form.attr('action');
+							const method = form.attr('method');
+							const notification = form.find('.notification');
+
+							form.on('submit', function(e){
+								e.preventDefault();
+								let data = new FormData(this);
+								
+								notification.addClass('show');
+								setTimeout(function(){
+									notification.removeClass('show');
+									inputs.val('');
+								}, 3000);
+								// $.ajax({
+								// 	method: method,
+								// 	url: url,
+								// 	data: data
+								// }).done(function(){
+								// 	console.log('Done');
+								// 	notification.addClass('show');
+								// }).failed(function(){
+								// 	console.log('Failed');
+								// });
+							});
+						});
+					</script>
+
 				</div>
 			</div>
-			<div class="col-12 col-lg-6 col-xl-6">
+			<div class="col-12 col-lg-6 col-xl-6 offset-lg-1 offset-xl-1">
 				<div class="contact-data">
 					<h3 class="title">
 						Нашi контакти
