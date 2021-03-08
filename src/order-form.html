@@ -1,0 +1,177 @@
+@@include('./template/head.html') 
+@@include('./template/header.html') 
+
+<div class="page-wrap order-form-page">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 col-lg-6 col-xl-6">
+				<h3 class="page-title">БУДЬ ЛАСКА, ЗАПОВНІТЬ КОНТАКТНУ ФОРМУ</h3>
+			</div>
+			<div class="col-12 col-lg-6 col-xl-7">
+				<div class="form-container">
+					<form action="" id="order-form">
+						<div class="input-group">
+							<input type="text" name="name" class="input" placeholder="ПIБ отримувача *" required="">
+						</div>
+						<div class="input-group">
+							<input type="phone" name="phone" class="input" placeholder="Контактний номер телефону *" required="">
+						</div>
+						<div class="input-group">
+							<input type="email" name="email" class="input" placeholder="Контактний E-mail *" required="">
+						</div>
+
+						<h3>Способ доставки</h3>
+						<div class="input-group">
+							<select name="delivery-method" id="" class="input">
+								<option value="np">Нова пошта</option>
+								<option value="npa">Нова пошта (за адресою)</option>
+								<option value="ukr">Укрпошта</option>
+								<option value="self">Самовивiз</option>
+							</select>
+						</div>
+						<div class="delivery-form-group np-group">
+							<div class="input-group">
+								<input type="text" name="state" class="input" placeholder="Область отримувача *" required="">
+							</div>
+							<div class="input-group">
+								<input type="text" name="city" class="input" placeholder="Мiсто/село/смт отримувача *" required="">
+							</div>
+							<div class="input-group">
+								<label>
+									<span class="label-text">Вiддiленя *</span>
+									<input type="number" name="num" class="input" step="1" min="1" value="1" placeholder="Вiддiленя *" required="">
+								</label>
+							</div>
+						</div>
+
+						<div class="delivery-form-group npa-group">
+							<div class="input-group">
+								<input type="text" name="state" class="input" placeholder="Область отримувача *" required="">
+							</div>
+							<div class="input-group">
+								<input type="text" name="city" class="input" placeholder="Мiсто/село/смт отримувача *" required="">
+							</div>
+							<div class="input-group">
+								<input type="text" name="street" class="input" placeholder="Вулиця *" required="">
+							</div>
+							<div class="input-group">
+								<input type="text" name="building" class="input" placeholder="Будинок *" required="">
+							</div>
+
+							<div class="input-group">
+								<label>
+									<span class="label-text">Квартира *</span>
+									<input type="number" name="apartment" class="input" step="1" min="1" value="1" placeholder="Квартира *" required="">
+								</label>
+							</div>
+						</div>
+
+						<div class="delivery-form-group ukr-group">
+							<div class="input-group">
+								<input type="text" name="state" class="input" placeholder="Область отримувача *" required="">
+							</div>
+							<div class="input-group">
+								<input type="text" name="city" class="input" placeholder="Мiсто/село/смт отримувача *" required="">
+							</div>
+							<div class="input-group">
+								<label>
+									<span class="label-text">Поштовий iндекс *</span>
+									<input type="number" name="num" class="input" step="1" min="1" value="10000" placeholder="Поштовий iндекс *" required="">
+								</label>
+							</div>
+						</div>
+
+						<div class="input-group">
+							<textarea name="comment" class="input" placeholder="Коментар до замовлення"></textarea>
+						</div>
+
+						<div class="input-group">
+							<button class="button lg">
+								Замовити
+							</button>
+							<span class="total-price">
+								Всього <span class="value">0</span> грн
+							</span>
+						</div>
+
+					</form>
+
+					<script>
+						$(document).ready(function(){
+							const form = $('#order-form');
+							const deliveryMeth = form.find('[name="delivery-method"]');
+							const formGroups = form.find('.delivery-form-group');
+							formGroups.hide();
+							formGroups.find('.input').removeAttr('required');
+							$(formGroups[0]).show().find('.input').attr('required', '');
+
+
+							deliveryMeth.on('change', function(){
+								formGroups.hide();
+								const methodSelect = $(this);
+								const method = methodSelect.val();
+								const formGroup = form.find(`.delivery-form-group.${method}-group`);
+								formGroup.find('.input').attr('required', '');
+								formGroup.show();
+							});
+						});
+					</script>
+
+				</div>
+			</div>
+
+			<div class="col-12 col-lg-6 col-xl-5">
+				<div class="product-list-container">
+					<h3>Ваше замовлення (<strong class="counter">1</strong>)</h3>
+					<ul class="product-list">
+						@@for(var i=0; i<4; i++){
+							<li>
+								@@include('./template/product-card-mini.html')
+							</li>
+						}			
+					</ul>
+				</div>
+
+				<script>
+					function calculate_count(){
+						const products = $('.product-list .product-card');
+						const counterContainer = $('.product-list-container .counter');
+						const totalPriceContainer = $('.total-price .value');
+						let count = 0;
+						let totalPrice = 0;
+
+						for(let product of products){
+							let prod = $(product);
+							let c = parseInt(prod.find('.buy-control').attr('data-value'));
+							count += c;
+							totalPrice += parseInt(prod.find('.product-price .current .val').html()) * c;
+						}
+
+						counterContainer.html(count);
+						totalPriceContainer.html(totalPrice);
+					}
+
+					$(document).ready(function(){
+						calculate_count();
+						const btnsPlusMinus = $('.product-list .product-card .buy-control').find('.control-minus, .control-plus');
+
+						btnsPlusMinus.on('click', function(){
+							setTimeout(function(){
+								calculate_count();
+							}, 50);
+						});
+
+						$('.product-list .product-card .button-cancel').on('click', function(){
+							$(this).parent().parent().parent().parent().remove();
+							calculate_count();
+						});
+					});
+				</script>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+@@include('./template/insta.html') 
+@@include('./template/footer.html') 

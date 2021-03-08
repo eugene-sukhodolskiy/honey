@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Home</title>
+	<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap-grid.min.css">
+	<link rel="stylesheet" href="../bower_components/normalize.css/normalize.css">
+	<link rel="stylesheet" href="../bower_components/slick-carousel/slick/slick.css">
+	<link rel="stylesheet" href="css/main.css">
+
+	<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="../bower_components/slick-carousel/slick/slick.min.js"></script>
+	<script src="js/main.js"></script>
+</head>
+<body> 
+<header class="header">
+	<div class="container">
+		<div class="row">
+			<div class="col-4 top-logo-wrap mob">
+				<div class="top-logo-container">
+					<a href="/">
+						<img src="../build/img/top-logo.png" alt="Logo" class="top-logo">
+					</a>
+				</div>
+			</div>
+			<div class="col-12 col-xl-4">
+				<nav class="navigation left-nav">
+					<ul class="navlist">
+						<li class="navitem">
+							<a href="#" class="navlink">Головна</a>
+						</li>
+						<li class="navitem">
+							<ul class="navlist">
+								<li class="navitem">
+									<a href="#" class="navlink">Мед</a>
+								</li>
+								<li class="navitem">
+									<a href="#" class="navlink">Пилок</a>
+								</li>
+								<li class="navitem">
+									<a href="#" class="navlink">Свічки</a>
+								</li>
+								<li class="navitem">
+									<a href="#" class="navlink">Подарункові набори</a>
+								</li>
+							</ul>	
+
+							<a href="#" class="navlink">Наша продукція</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+
+			<div class="col-4 top-logo-wrap">
+				<div class="top-logo-container">
+					<a href="/">
+						<img src="../build/img/top-logo.png" alt="Logo" class="top-logo">
+					</a>
+				</div>
+			</div>
+
+			<div class="col-12 col-xl-4">
+				<a href="#" class="basket-button">
+					<span class="icon-container">
+						<ion-icon name="bag-handle-outline" class="basket-icon"></ion-icon>
+					</span>
+					<span class="counter">6</span>
+				</a>
+
+				<button class="menu" data-state="close">
+					<span class="state-open">
+						<ion-icon name="menu-outline"></ion-icon>
+					</span>
+					<span class="state-close">
+						<ion-icon name="close-outline"></ion-icon>
+					</span>
+				</button>
+
+				<nav class="navigation right-nav">
+					<ul class="navlist">
+						<li class="navitem">
+							<a href="#" class="navlink">Контакти</a>
+						</li>
+						<li class="navitem">
+							<a href="#" class="navlink">Про нас</a>
+						</li>
+						<li class="navitem">
+							<a href="#" class="navlink">Відгуки</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>		
+	</div>
+</header> 
+
+<div class="page-wrap order-form-page">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 col-lg-6 col-xl-6">
+				<h3 class="page-title">БУДЬ ЛАСКА, ЗАПОВНІТЬ КОНТАКТНУ ФОРМУ</h3>
+			</div>
+			<div class="col-12 col-lg-6 col-xl-7">
+				<div class="form-container">
+					<form action="" id="order-form">
+						<div class="input-group">
+							<input type="text" name="name" class="input" placeholder="ПIБ отримувача *" required="">
+						</div>
+						<div class="input-group">
+							<input type="phone" name="phone" class="input" placeholder="Контактний номер телефону *" required="">
+						</div>
+						<div class="input-group">
+							<input type="email" name="email" class="input" placeholder="Контактний E-mail *" required="">
+						</div>
+
+						<h3>Способ доставки</h3>
+						<div class="input-group">
+							<select name="delivery-method" id="" class="input">
+								<option value="np">Нова пошта</option>
+								<option value="npa">Нова пошта (за адресою)</option>
+								<option value="ukr">Укрпошта</option>
+								<option value="self">Самовивiз</option>
+							</select>
+						</div>
+						<div class="delivery-form-group np-group">
+							<div class="input-group">
+								<input type="text" name="state" class="input" placeholder="Область отримувача *" required="">
+							</div>
+							<div class="input-group">
+								<input type="text" name="city" class="input" placeholder="Мiсто/село/смт отримувача *" required="">
+							</div>
+							<div class="input-group">
+								<label>
+									<span class="label-text">Вiддiленя *</span>
+									<input type="number" name="num" class="input" step="1" min="1" value="1" placeholder="Вiддiленя *" required="">
+								</label>
+							</div>
+						</div>
+
+						<div class="delivery-form-group npa-group">
+							<div class="input-group">
+								<input type="text" name="state" class="input" placeholder="Область отримувача *" required="">
+							</div>
+							<div class="input-group">
+								<input type="text" name="city" class="input" placeholder="Мiсто/село/смт отримувача *" required="">
+							</div>
+							<div class="input-group">
+								<input type="text" name="street" class="input" placeholder="Вулиця *" required="">
+							</div>
+							<div class="input-group">
+								<input type="text" name="building" class="input" placeholder="Будинок *" required="">
+							</div>
+
+							<div class="input-group">
+								<label>
+									<span class="label-text">Квартира *</span>
+									<input type="number" name="apartment" class="input" step="1" min="1" value="1" placeholder="Квартира *" required="">
+								</label>
+							</div>
+						</div>
+
+						<div class="delivery-form-group ukr-group">
+							<div class="input-group">
+								<input type="text" name="state" class="input" placeholder="Область отримувача *" required="">
+							</div>
+							<div class="input-group">
+								<input type="text" name="city" class="input" placeholder="Мiсто/село/смт отримувача *" required="">
+							</div>
+							<div class="input-group">
+								<label>
+									<span class="label-text">Поштовий iндекс *</span>
+									<input type="number" name="num" class="input" step="1" min="1" value="10000" placeholder="Поштовий iндекс *" required="">
+								</label>
+							</div>
+						</div>
+
+						<div class="input-group">
+							<textarea name="comment" class="input" placeholder="Коментар до замовлення"></textarea>
+						</div>
+
+						<div class="input-group">
+							<button class="button lg">
+								Замовити
+							</button>
+							<span class="total-price">
+								Всього <span class="value">0</span> грн
+							</span>
+						</div>
+
+					</form>
+
+					<script>
+						$(document).ready(function(){
+							const form = $('#order-form');
+							const deliveryMeth = form.find('[name="delivery-method"]');
+							const formGroups = form.find('.delivery-form-group');
+							formGroups.hide();
+							formGroups.find('.input').removeAttr('required');
+							$(formGroups[0]).show().find('.input').attr('required', '');
+
+
+							deliveryMeth.on('change', function(){
+								formGroups.hide();
+								const methodSelect = $(this);
+								const method = methodSelect.val();
+								const formGroup = form.find(`.delivery-form-group.${method}-group`);
+								formGroup.find('.input').attr('required', '');
+								formGroup.show();
+							});
+						});
+					</script>
+
+				</div>
+			</div>
+
+			<div class="col-12 col-lg-6 col-xl-5">
+				<div class="product-list-container">
+					<h3>Ваше замовлення (<strong class="counter">1</strong>)</h3>
+					<ul class="product-list">
+						
+							<li>
+								<div class="product-card mini">
+	<div class="product-head">
+		<div class="bubl">-15%</div>
+		<div class="product-label">
+			Новинка
+		</div>
+		<div class="product-thumb">
+			<img src="https://via.placeholder.com/400" alt="" class="product-pic">
+		</div>
+	</div>
+	<div class="product-body">
+		<h3 class="product-title">Product Title</h3>
+		<div class="product-price">
+			<span class="current">
+				<span class="val">120</span>
+				<span class="currency">грн</span>
+			</span>
+			<span class="old">
+				<span class="val">132</span>
+				<span class="currency">грн</span>
+			</span>
+
+			<span class="sep">/</span>
+
+			<span class="weight">
+				<span class="val">250</span>
+				<span class="unit">г</span>
+			</span>
+		</div>
+		<div class="btns">
+			<button class="button sm buy">
+				<span class="buy-control" data-value="1">
+					<span class="control-minus">
+						<ion-icon name="chevron-back-outline"></ion-icon>
+					</span>
+					<span class="buy-value">1</span>
+					<span class="control-plus">
+						<ion-icon name="chevron-forward-outline"></ion-icon>
+					</span>
+				</span>
+			</button>
+			<button class="button-cancel">
+				<ion-icon name="close-circle-outline"></ion-icon>
+			</button>
+		</div>
+	</div>
+</div>
+							</li>
+						
+							<li>
+								<div class="product-card mini">
+	<div class="product-head">
+		<div class="bubl">-15%</div>
+		<div class="product-label">
+			Новинка
+		</div>
+		<div class="product-thumb">
+			<img src="https://via.placeholder.com/400" alt="" class="product-pic">
+		</div>
+	</div>
+	<div class="product-body">
+		<h3 class="product-title">Product Title</h3>
+		<div class="product-price">
+			<span class="current">
+				<span class="val">120</span>
+				<span class="currency">грн</span>
+			</span>
+			<span class="old">
+				<span class="val">132</span>
+				<span class="currency">грн</span>
+			</span>
+
+			<span class="sep">/</span>
+
+			<span class="weight">
+				<span class="val">250</span>
+				<span class="unit">г</span>
+			</span>
+		</div>
+		<div class="btns">
+			<button class="button sm buy">
+				<span class="buy-control" data-value="1">
+					<span class="control-minus">
+						<ion-icon name="chevron-back-outline"></ion-icon>
+					</span>
+					<span class="buy-value">1</span>
+					<span class="control-plus">
+						<ion-icon name="chevron-forward-outline"></ion-icon>
+					</span>
+				</span>
+			</button>
+			<button class="button-cancel">
+				<ion-icon name="close-circle-outline"></ion-icon>
+			</button>
+		</div>
+	</div>
+</div>
+							</li>
+						
+							<li>
+								<div class="product-card mini">
+	<div class="product-head">
+		<div class="bubl">-15%</div>
+		<div class="product-label">
+			Новинка
+		</div>
+		<div class="product-thumb">
+			<img src="https://via.placeholder.com/400" alt="" class="product-pic">
+		</div>
+	</div>
+	<div class="product-body">
+		<h3 class="product-title">Product Title</h3>
+		<div class="product-price">
+			<span class="current">
+				<span class="val">120</span>
+				<span class="currency">грн</span>
+			</span>
+			<span class="old">
+				<span class="val">132</span>
+				<span class="currency">грн</span>
+			</span>
+
+			<span class="sep">/</span>
+
+			<span class="weight">
+				<span class="val">250</span>
+				<span class="unit">г</span>
+			</span>
+		</div>
+		<div class="btns">
+			<button class="button sm buy">
+				<span class="buy-control" data-value="1">
+					<span class="control-minus">
+						<ion-icon name="chevron-back-outline"></ion-icon>
+					</span>
+					<span class="buy-value">1</span>
+					<span class="control-plus">
+						<ion-icon name="chevron-forward-outline"></ion-icon>
+					</span>
+				</span>
+			</button>
+			<button class="button-cancel">
+				<ion-icon name="close-circle-outline"></ion-icon>
+			</button>
+		</div>
+	</div>
+</div>
+							</li>
+						
+							<li>
+								<div class="product-card mini">
+	<div class="product-head">
+		<div class="bubl">-15%</div>
+		<div class="product-label">
+			Новинка
+		</div>
+		<div class="product-thumb">
+			<img src="https://via.placeholder.com/400" alt="" class="product-pic">
+		</div>
+	</div>
+	<div class="product-body">
+		<h3 class="product-title">Product Title</h3>
+		<div class="product-price">
+			<span class="current">
+				<span class="val">120</span>
+				<span class="currency">грн</span>
+			</span>
+			<span class="old">
+				<span class="val">132</span>
+				<span class="currency">грн</span>
+			</span>
+
+			<span class="sep">/</span>
+
+			<span class="weight">
+				<span class="val">250</span>
+				<span class="unit">г</span>
+			</span>
+		</div>
+		<div class="btns">
+			<button class="button sm buy">
+				<span class="buy-control" data-value="1">
+					<span class="control-minus">
+						<ion-icon name="chevron-back-outline"></ion-icon>
+					</span>
+					<span class="buy-value">1</span>
+					<span class="control-plus">
+						<ion-icon name="chevron-forward-outline"></ion-icon>
+					</span>
+				</span>
+			</button>
+			<button class="button-cancel">
+				<ion-icon name="close-circle-outline"></ion-icon>
+			</button>
+		</div>
+	</div>
+</div>
+							</li>
+									
+					</ul>
+				</div>
+
+				<script>
+					function calculate_count(){
+						const products = $('.product-list .product-card');
+						const counterContainer = $('.product-list-container .counter');
+						const totalPriceContainer = $('.total-price .value');
+						let count = 0;
+						let totalPrice = 0;
+
+						for(let product of products){
+							let prod = $(product);
+							let c = parseInt(prod.find('.buy-control').attr('data-value'));
+							count += c;
+							totalPrice += parseInt(prod.find('.product-price .current .val').html()) * c;
+						}
+
+						counterContainer.html(count);
+						totalPriceContainer.html(totalPrice);
+					}
+
+					$(document).ready(function(){
+						calculate_count();
+						const btnsPlusMinus = $('.product-list .product-card .buy-control').find('.control-minus, .control-plus');
+
+						btnsPlusMinus.on('click', function(){
+							setTimeout(function(){
+								calculate_count();
+							}, 50);
+						});
+
+						$('.product-list .product-card .button-cancel').on('click', function(){
+							$(this).parent().parent().parent().parent().remove();
+							calculate_count();
+						});
+					});
+				</script>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="insta">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 col-lg-3 col-xl-3">
+				<div class="profile">
+					<img src="../build/img/logo@1X.png" class="avatar" alt="avatar">
+					<a href="#" class="name">
+						vichniy.med
+					</a>
+				</div>
+			</div>
+			<div class="col-12 col-lg-9 col-xl-9">
+				<h3>
+					Слідкуй за нами в Instagram
+				</h3>
+			</div>
+		</div>
+	</div>
+
+	<div class="post-carousel">
+		<img src="../build/img/1@1X.png" class="insta-post" alt="" data-href="http://instagram.com">
+		<img src="../build/img/2@1X.png" class="insta-post" alt="" data-href="http://instagram.com">
+		<img src="../build/img/3@1X.png" class="insta-post" alt="" data-href="http://instagram.com">
+		<img src="../build/img/4@1X.png" class="insta-post" alt="" data-href="http://instagram.com">
+		<img src="../build/img/6@1X.png" class="insta-post" alt="" data-href="http://instagram.com">
+	</div>
+</div>
+
+<script>
+	$(document).ready(function(){
+		$('.post-carousel').slick({
+			slidesToShow: 5,
+			slidesToScroll: 1,
+			arrows: false,
+			dots: false,
+			responsive: [
+				{
+					breakpoint: 1400,
+					settings: {
+						slidesToShow: 4,
+						slidesToScroll: 1,
+					}
+				},
+				{
+					breakpoint: 1024,
+					settings: {
+						slidesToShow: 3,
+						slidesToScroll: 1,
+					}
+				},
+				{
+					breakpoint: 600,
+					settings: {
+						slidesToShow: 2,
+						slidesToScroll: 1
+					}
+				}
+			]
+		});
+	});	
+</script> 
+<footer class="footer">
+	<div class="container top-line">
+		<div class="row">
+			<div class="col-3 d-none d-xl-block">
+				<img src="../build/img/footer-logo.png" alt="Footer logo" class="logo">
+			</div>
+			<div class="col-md-7 col-lg-8 col-xl-6">
+				<nav class="navigation">
+					<ul class="navlist">
+						<li class="navitem">
+							<a href="#" class="navlink">Контакти</a>
+						</li>
+						<li class="navitem">
+							<a href="#" class="navlink">Про нас</a>
+						</li>
+						<li class="navitem">
+							<a href="#" class="navlink">Відгуки</a>
+						</li>
+						<li class="navitem">
+							<a href="#" class="navlink">Доставка</a>
+						</li>
+					</ul>
+				</nav>
+
+				<ul class="contact-links">
+					<li><a href="#" class="soc-link telegram"></a></li>
+					<li><a href="#" class="soc-link viber"></a></li>
+					<li><a href="#" class="soc-link instagram"></a></li>
+					<li><a href="#" class="soc-link facebook"></a></li>
+				</ul>
+			</div>
+			<div class="col-md-5 col-lg-4 col-xl-3">
+				<div class="contact-info">
+					<div class="phone-group">
+						<div class="row">
+							<div class="col-4 col-md-5 col-lg-5 col-xl-4 icon-container">
+							</div>
+							<div class="col-8 col-md-7 col-lg-7 col-xl-8">
+								<div class="phone">+38 063 716-11-95</div>
+								<div class="phone">+38 067 716-11-94</div>
+								<div class="phone-info">Пн-Пт 9:00 - 20:00</div>
+							</div>
+						</div>
+					</div>
+					<div class="email">
+						support.vichniy.med@gmail.com			
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="bottom-line">
+		<div class="container">
+			<div class="row">
+				<div class="col-12 col-lg-4 col-xl-4">
+					<a href="#">Політика конфіденційності</a>
+				</div>
+				<div class="col-12 col-lg-4 col-xl-4 copyright">
+					&copy; 2021
+				</div>
+				<div class="col-12 col-lg-4 col-xl-4 address">
+					м. Житомир, вул. Шевська, 12
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+</body>
+</html> 
