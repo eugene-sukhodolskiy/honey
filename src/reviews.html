@@ -91,7 +91,13 @@
 			</div>
 		</div>
 	</div>
-</div>
+
+	@@include('./template/swipeable-product-line.html', {
+		'cssclass': 'recommended-products',
+		'title': 'Ваші улюблені',
+		'total': 4
+	})
+</div> 
 
 <script>
 	$(document).ready(function(){
