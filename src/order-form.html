@@ -20,12 +20,12 @@
 							<input type="email" name="email" class="input" placeholder="Контактний E-mail *" required="">
 						</div>
 
-						<h3>Способ доставки</h3>
+						<h3>Спосiб доставки</h3>
 						<div class="input-group">
 							<select name="delivery-method" id="" class="input">
 								<option value="np">Нова пошта</option>
 								<option value="npa">Нова пошта (за адресою)</option>
-								<option value="ukr">Укрпошта</option>
+								<option value="ukr">Укрпошта (доставка 3-4 дні)</option>
 								<option value="self">Самовивiз</option>
 							</select>
 						</div>
@@ -81,8 +81,24 @@
 							</div>
 						</div>
 
+						<h3>Спосiб оплати</h3>
+						<div class="input-group">
+							<select name="payment-method" id="" class="input">
+								<option value="privat-card">На карту приват банка</option>
+								<option value="npn">Наложенний</option>
+								<option value="cash">Наличными</option>
+							</select>
+						</div>
+
 						<div class="input-group">
 							<textarea name="comment" class="input" placeholder="Коментар до замовлення"></textarea>
+						</div>
+
+						<div class="input-group">
+							<label>
+								<input type="checkbox" name="pers-data" class="input" required="" checked="checked">
+								<span class="label-text">Даю згоду на обробку персональних даних</span>
+							</label>
 						</div>
 
 						<div class="input-group">
@@ -171,6 +187,8 @@
 			</div>
 		</div>
 	</div>
+
+	@@include('./template/recommended-products.html')
 </div>
 
 @@include('./template/insta.html') 
