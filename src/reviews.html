@@ -6,7 +6,6 @@
 		<div class="row">
 			<div class="col-12 col-lg-10 col-xl-10 offset-lg-1 offset-xl-1">
 				<h3 class="page-title">Реальнi вiдгуки про нас</h3>
-				<p class="total">Всього <span class="counter">0</span> вiдгукiв</p>
 			</div>
 			<div class="col-12">
 				<div class="col-12 col-lg-10 col-xl-10 offset-lg-1 offset-xl-1 main">
@@ -98,10 +97,8 @@
 	$(document).ready(function(){
 		const reviews = $('.review-item');
 		const screenViewer = $('.screen');
-		const totalCounter = $('.total .counter');
 		$(reviews[0]).addClass('active');
 		screenViewer.attr('src', $(reviews[0]).attr('data-screen'));
-		totalCounter.html(reviews.length);
 
 		reviews.on('click', function(){
 			const review = $(this);
