@@ -1,0 +1,52 @@
+.single-page{
+	margin-top: 0px; 
+
+	.thumbnail{
+		overflow: hidden;
+		height: 470px;
+
+		img{
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center;
+		}
+	}
+
+	.title{}
+
+	.content{
+		*{
+			font-family: Arial;
+		}
+
+		p{
+			line-height: 22px;
+		}
+
+		img{
+			max-width: 100%;
+			text-align: center;
+		}
+	}
+}
+
+@media (max-width: 1200px){
+	.single-page{
+		margin-top: -23px; 
+	}
+}
+
+@media (max-width: 768px){
+	.single-page{
+		.thumbnail{
+			overflow: hidden;
+			height: 200px;
+		}
+
+		.title{}
+
+		.content{
+		}
+	}
+}
