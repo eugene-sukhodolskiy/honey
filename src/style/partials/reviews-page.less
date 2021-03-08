@@ -9,6 +9,10 @@
 		margin-bottom: 50px;
 	}
 
+	.total{
+		margin-top: -30px;
+	}
+
 	.review-screen{
 		width: 220px;
 		height: 445px;
@@ -28,24 +32,44 @@
 			width: ~'calc(100% - 20px)';
 			margin-left: 10px;
 			border-radius: 40px;
-			margin-top: 25px;
+			margin-top: 0;
 			z-index: 1;
 		}
 	}
 
 	.reviews-list{
+		max-height: 450px;
+		height: auto;
+		overflow-y: auto;
+		padding-left: 5px;
+
+		&::-webkit-scrollbar {
+		  width: 5px;
+		  background-color: #888;
+		}
+		 
+		&::-webkit-scrollbar-track {
+		  width: 2px;
+		  background-color: #bbb;
+		}
+		 
+		&::-webkit-scrollbar-thumb {
+		  background-color: darkgrey;
+		  outline: 1px solid slategrey;
+		}
+
 		ul{
 			padding: 0;
 			list-style-type: none;
 
 			.review-item{
 				clear: both;
-				margin-bottom: 30px;
+				margin-bottom: 19px;
 
 				.insta-avatar{
 					display: inline-block;
-					width: 70px;
-					height: 70px;
+					width: 64px;
+					height: 64px;
 					padding: 7px;
 					border-radius: 100%;
 					background: url('../img/0417acce45aa4164d39cfefc68abf54c@1X.png') no-repeat;
@@ -62,7 +86,7 @@
 
 				.insta-link{
 					display: inline-block;
-					margin-top: 16px;
+					margin-top: 13px;
 					font-size: 20px;
 					transition-duration: @tdu;
 					transition-property: margin-left;
@@ -79,8 +103,8 @@
 
 				&:hover, &.active{
 					.insta-avatar{
-						width: 80px;
-						height: 80px;
+						width: 74px;
+						height: 74px;
 						top: -5px;
 						left: -5px;
 					}
@@ -137,6 +161,8 @@
 			text-align: center;
 			margin-left: auto;
 			margin-right: auto;
+	    width: 280px;
+    	height: 570px;
 
 			.screen-placeholder{
 				display: inline-block;
@@ -144,6 +170,9 @@
 
 			.screen{
 				display: inline-block;
+				width: ~'calc(100% - 17px)';
+   			margin-left: 9px;
+   			margin-top: -5px;
 			}
 		}
 
