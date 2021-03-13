@@ -1,0 +1,141 @@
+/*
+Theme Name: Ukrmagic theme [redesign]
+Text Domain: ukrmagic-theme
+Version: 0.1
+Description: Designed for order
+Author: Eugene Sukhodolskiy <eugene.sukhodolskiy@gmail.com>
+Author URI: mailto:eugene.sukhodolskiy@gmail.com;
+*/
+
+.admin-bar #wpadminbar{
+	display: none;
+}
+
+body{
+	padding-top: 50px;
+}
+
+.page.home{
+	padding-top: calc(94px);
+}
+
+.page-heading{
+	margin-bottom: 24px;
+	margin-top: 64px;
+	text-align: center;
+}
+
+.single-page-thumbnail{
+	width: 100%;
+	object-fit: cover;
+	max-height: 400px;
+	border-radius: 10px;
+	margin-bottom: 24px;
+}
+
+.single-page-timestamp{
+	font-weight: bold;
+}
+
+.comments{
+	margin-top: 64px;
+}
+
+.commentform{
+	margin-top: 40px;
+}
+
+.magicman-single .single-page-thumbnail{
+	height: 280px;
+}
+
+.latest-comments-container{
+	background-image: url('css-pack/resources/latest-comments-heading.png');
+}
+
+.comment-mini .card-body{
+	overflow: hidden;
+	max-height: 112px;
+}
+
+.header-container{
+	max-height: 80px;
+}
+
+.single-page-heading{
+	margin-top: 64px;
+}
+
+.single-page-content{
+	margin-top: 24px;
+}
+
+.top-block{
+	min-height: 250px;
+	width: 100%;
+	background: url("/wp-content/themes/ukrmagic-redesign/css-pack/resources/ukrmagic-header-bg.png") no-repeat;
+	background-size: cover;
+	padding-top: 30px;
+  text-align: center;
+  margin-top: -15px;
+  border-radius: 0 0 15px 15px;
+  padding-bottom: 20px;
+  box-shadow: 0px 0px 30px rgba(152, 157, 168, 0.6);
+}
+
+.top-block .sitename {
+  margin-top: 0;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.top-block .sitename-link {
+  font-size: 24rem;
+  color: inherit;
+}
+
+.top-block .sitename-link:hover{
+	text-decoration: none;
+}
+
+.top-block .site-description {
+  text-transform: initial;
+  font-size: 18rem;
+  line-height: 20rem;
+  color: #fff;
+  margin-top: 20px;
+}
+
+.top-block .sitename span {
+  display: inline-block;
+  padding: 4px 15px;
+  border: 3px solid var(--primary-light-color);
+  margin-top: 5px;
+  font-size: 18rem;
+  border-radius: 20px;
+}
+
+@media (max-width: 992px){
+	.page.home{
+		padding-top: 50px;
+	}
+
+	.single-page-heading,
+	.page-heading{
+		margin-top: 24px;
+	}
+
+	.footer{
+		margin-top: 54px;
+	}
+}
+
+@media (max-width: 440px){
+	.tags-label{
+		display: none;
+	}
+}
+
+.contactblock{
+	margin-top: 50px;
+}
