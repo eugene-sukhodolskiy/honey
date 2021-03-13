@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/eugene-sukhodolskiy/honey.git"
   },
-  "author": "Eugene Sukhodolskiy <eugene.sukhodolskiy@gmail.com>",
+  "author": "Eugene Sukhodolskiy <eugene.sukhodolskiy@gmail.com> (https://github.com/eugene-sukhodolskiy)",
   "license": "ISC",
   "dependencies": {
     "gulp": "^3.9.1",

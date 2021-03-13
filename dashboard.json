@@ -1,7 +1,18 @@
 {
 	"name": "Honey HTML",
 	"ver": "1.0",
-	"author": "E. Sukhodolskiy",
+	"authors": [
+		{
+			"name": "Eugene Sukhodolskiy",
+			"email": "eugene.sukhodolskiy@gmail.com",
+			"url": "https://github.com/eugene-sukhodolskiy"
+		},
+		{
+			"name": "Aleks",
+			"email": "alec.sukhodolskiy@gmail.com",
+			"url": "https://github.com/eugene-sukhodolskiy"
+		}
+	],
 	"tags": [
 		"honey",
 		"html",
