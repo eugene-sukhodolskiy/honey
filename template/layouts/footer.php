@@ -1,3 +1,14 @@
+	<? 
+		$cpost = get_page_by_path('contacts', OBJECT);
+		$phones = [
+			get_post_meta($cpost -> ID, 'phone_1'), 
+			get_post_meta($cpost -> ID, 'phone_2')
+		];
+		$address = get_post_meta($cpost -> ID, 'address');
+		$email = get_post_meta($cpost -> ID, 'email');
+		$call_time = get_post_meta($cpost -> ID, 'time_to_call');
+	?>
+
 	<footer class="footer">
 		<div class="container top-line">
 			<div class="row">
@@ -36,14 +47,15 @@
 								<div class="col-4 col-md-5 col-lg-5 col-xl-4 icon-container">
 								</div>
 								<div class="col-8 col-md-7 col-lg-7 col-xl-8">
-									<div class="phone">+38 063 716-11-95</div>
-									<div class="phone">+38 067 716-11-94</div>
-									<div class="phone-info">Пн-Пт 9:00 - 20:00</div>
+									<? foreach($phones as $phone): ?>
+										<div class="phone"><?= $phone[0] ?></div>
+									<? endforeach ?>
+									<div class="phone-info"><?= $call_time[0] ?></div>
 								</div>
 							</div>
 						</div>
 						<div class="email">
-							support.vichniy.med@gmail.com			
+							<?= $email[0] ?>	
 						</div>
 					</div>
 				</div>
@@ -59,7 +71,7 @@
 						&copy; 2021
 					</div>
 					<div class="col-12 col-lg-4 col-xl-4 address">
-						м. Житомир, вул. Шевська, 12
+						<?= $address[0] ?>
 					</div>
 				</div>
 			</div>
