@@ -6,11 +6,6 @@
 			"name": "Eugene Sukhodolskiy",
 			"email": "eugene.sukhodolskiy@gmail.com",
 			"url": "https://github.com/eugene-sukhodolskiy"
-		},
-		{
-			"name": "Aleks",
-			"email": "alec.sukhodolskiy@gmail.com",
-			"url": "https://github.com/eugene-sukhodolskiy"
 		}
 	],
 	"tags": [
@@ -23,8 +18,18 @@
 	"main_lang": "html",
 	"status": "open",
 	"project_color": "#e89700",
+	"links": {
+		"html_elements": "https://eugene-sukhodolskiy.github.io/honey/html/build/elements.html",
+		"html_home": "https://eugene-sukhodolskiy.github.io/honey/html/build/index.html",
+		"html_contacts": "https://eugene-sukhodolskiy.github.io/honey/html/build/contacts.html",
+		"html_products": "https://eugene-sukhodolskiy.github.io/honey/html/build/products.html",
+		"html_reviews": "https://eugene-sukhodolskiy.github.io/honey/html/build/reviews.html",
+		"html_order_form": "https://eugene-sukhodolskiy.github.io/honey/html/build/order-form.html",
+		"html_single": "https://eugene-sukhodolskiy.github.io/honey/html/build/single.html",
+		"html_single_product": "https://eugene-sukhodolskiy.github.io/honey/html/build/single-product.html"
+	},
 	"git_url": "https://github.com/eugene-sukhodolskiy/honey",
 	"release_url": null,
 	"favicon": null,
-	"description": "HTML for cms wordpress"
+	"description": "Wordpress theme"
 }
