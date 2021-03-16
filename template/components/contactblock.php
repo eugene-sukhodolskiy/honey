@@ -1,52 +1,60 @@
-<div class="block contactblock">
-	<div class="row">
-		<div class="col-12 col-lg-6 col-xl-6">
-			<a href="mailto:magicpeople@mail.com" class="transparent-link contactblock-email-link">smagicpeople@mail.com</a>
-			<a href="mailto:voodoopeople@mail.com" class="transparent-link contactblock-email-link">voodoopeople@mail.com</a>
-			<a href="call:+3 (123) 123 - 45 - 67" class="transparent-link contactblock-phone-link">+3 (123) 123 - 45 - 67</a>
+<div class="contact-form">
+	<h3 class="title">Напиши нам прямо зараз</h3>
+	<form action="" id="contact" method="post">
+		<div class="notification">
+			<h3 class="msg">Дякую за ваш меседж</h3>
+			<ion-icon name="happy-outline"></ion-icon>
 		</div>
-		<div class="col-12 col-lg-6 col-xl-6">
-			<form action="" method="post" id="contactblock-form" class="contactblock-form with-notidamper">
-				<div class="notidamper" data-id="commentform">
-					<div class="notimess">Сообщение успешно отправлено</div>
-				</div>
-				<div class="form-container">
-					<input type="text" class="input" id="username" name="username" required="">
-					<label for="username" class="label">Имя*</label>
-				</div>
-				<div class="form-container">
-					<input type="email" class="input" id="email" name="email" required="">
-					<label for="email" class="label">Email*</label>
-				</div>
-				<div class="form-container">
-					<input type="phone" class="input" id="phone" name="phone" required="">
-					<label for="phone" class="label">Номер телефона*</label>
-				</div>
-				<div class="form-container">
-					<textarea class="input" id="message" name="message" required="" placeholder="Сообщение"></textarea>
-				</div>
-				<button class="button primary big submit">Отправить</button>
-			</form>
+
+		<div class="input-group">
+			<input type="text" name="name" class="input" placeholder="Ваше им`я *" required="">
 		</div>
-	</div>
-</div>
+		<div class="input-group">
+			<input type="phone" name="phone" class="input" placeholder="Контактний номер телефону *" required="">
+		</div>
+		<div class="input-group">
+			<input type="email" name="email" class="input" placeholder="Контактний E-mail *" required="">
+		</div>
+		<div class="input-group">
+			<textarea name="msg" class="input" placeholder="Текст листа" required=""></textarea>
+		</div>
+		<div class="input-group">
+			<button class="button">
+				Написати 
+				<ion-icon name="send-outline"></ion-icon>
+			</button>
+		</div>
+	</form>
 
-<script>
-	$(document).ready(function(){
-		$('#contactblock-form').on('submit', function(e){
-			e.preventDefault();
-			const form = $(this);
-			const inps = form.find('.input[name]');
-			form.addClass('notishow');
+	<script>
+		$(document).ready(function(){
+			const form = $('#contact');
+			const inputs = form.find('.input');
+			const url = form.attr('action');
+			const method = form.attr('method');
+			const notification = form.find('.notification');
 
-			setTimeout(function(){
-				form.removeClass('notishow');
-				$(inps).removeClass('focus').val('');
-			}, 1000);
-
-			setTimeout(function(){
-				form.removeClass('notishow');
-			}, 4000);
+			form.on('submit', function(e){
+				e.preventDefault();
+				let data = new FormData(this);
+				
+				notification.addClass('show');
+				setTimeout(function(){
+					notification.removeClass('show');
+					inputs.val('');
+				}, 3000);
+				// $.ajax({
+				// 	method: method,
+				// 	url: url,
+				// 	data: data
+				// }).done(function(){
+				// 	console.log('Done');
+				// 	notification.addClass('show');
+				// }).failed(function(){
+				// 	console.log('Failed');
+				// });
+			});
 		});
-	});
-</script>
+	</script>
+
+</div>

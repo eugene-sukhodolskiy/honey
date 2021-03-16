@@ -17,16 +17,11 @@ class TemplateController{
 			return $this -> contacts_page();
 		}elseif(is_page()){
 			return $this -> simple_single_page();
-		}elseif(is_category() and count($this -> wp_query -> posts) and $this -> wp_query -> posts[0] -> post_type == 'magicman'){
-			$cat_name = single_cat_title('', 0);
-			return $this -> magicman_list($cat_name);
 		}elseif(is_category()){
 			$cat_name = single_cat_title('', 0);
 			return $this -> article_list($cat_name);
 		}elseif(is_post_type_archive('article')){
 			return $this -> article_list('Статьи');
-		}elseif(is_post_type_archive('magicman')){
-			return $this -> magicman_list("Список магов");
 		}elseif(is_single() and count($this -> wp_query -> posts) and $this -> wp_query -> posts[0] -> post_type == 'magicman'){
 			return $this -> magicman_single();
 		}elseif(strpos($_SERVER['REQUEST_URI'], "/hen/") !== false){
@@ -49,19 +44,8 @@ class TemplateController{
 		]);
 	}
 
-	public function magicman_list($page_heading){
-		return get_template_ins() -> make('pages/magicman-list', [
-			'posts' => $this -> wp_query -> posts, 
-			'page_heading' => $page_heading
-		]);
-	}
-
 	public function article_single(){
 		return get_template_ins() -> make('pages/article-single', ['post' => $this -> wp_query -> posts[0]]);
-	}
-
-	public function magicman_single(){
-		return get_template_ins() -> make('pages/magicman-single', ['post' => $this -> wp_query -> posts[0]]);
 	}
 
 	public function contacts_page(){
