@@ -209,6 +209,23 @@ p{
 	}
 }
 
+a.no-style{
+	text-decoration: none;
+	color: inherit;
+	font-size: inherit;
+
+	&:hover{
+		text-decoration: inherit;
+		outline: inherit;
+		color: inherit;
+	}
+
+	&:focus{
+		text-decoration: none;
+		outline: none;
+	}
+}
+
 @media (max-width: 768px){
 	h1{
 		font-size: 28px;

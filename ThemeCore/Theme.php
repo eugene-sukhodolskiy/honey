@@ -44,6 +44,8 @@ class Theme{
 		});
 
 		$this -> ajax_controller = new AjaxController();
+
+		add_filter( 'woocommerce_enqueue_styles', '__return_false' );
 	}
 
 	public function render_custom_settings(){

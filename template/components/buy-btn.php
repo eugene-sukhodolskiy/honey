@@ -1,0 +1,12 @@
+<button class="button <?= isset($addition_class) ? $addition_class : '' ?> buy">
+	<?= $btntext ?>
+	<span class="buy-control" data-value="1" data-max="10">
+		<span class="control-minus">
+			<ion-icon name="chevron-back-outline"></ion-icon>
+		</span>
+		<span class="buy-value">1</span>
+		<span class="control-plus">
+			<ion-icon name="chevron-forward-outline"></ion-icon>
+		</span>
+	</span>
+</button>
