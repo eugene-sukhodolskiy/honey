@@ -18,7 +18,8 @@ class Theme{
 
 			register_nav_menus(
 				[
-					'main' => 'Primary',
+					'header-left' => 'Header left side',
+					'header-right' => 'Header right side',
 				]
 			);
 		});

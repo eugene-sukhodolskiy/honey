@@ -9,15 +9,15 @@
 		$skip = 0;
 ?>
 
-	<ul class="nav-list">
+	<ul class="navlist">
 		<? foreach($nav_items as $i => $item): ?>
 			<? if($skip){ $skip--; continue; } ?>
-			<li class="nav-item <? if(is_current_cat($item)): ?>active<? endif ?>">
-				<a href="<?= $item -> url ?>" class="nav-link"><?= $item -> title ?></a>
+			<li class="navitem <? if(is_current_cat($item)): ?>active<? endif ?>">
+				<a href="<?= $item -> url ?>" class="navlink"><?= $item -> title ?></a>
 				<? $total_number_of_render = render_navlist($nav_items, $item -> ID); ?>
 				<? if($total_number_of_render): ?>
 					<? $skip = $total_number_of_render ?>
-					<!-- <ion-icon class="caret" name="caret-down-outline"></ion-icon> -->
+					<ion-icon class="caret" name="caret-down-outline"></ion-icon>
 				<? endif ?>
 			</li>
 		<? endforeach ?>

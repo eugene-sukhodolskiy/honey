@@ -1,5 +1,11 @@
 <?= $this -> join('layouts/head') ?>
 
+<?
+	$nav_items_left = get_navitems('header-left');			
+	$nav_items_right = get_navitems('header-right');			
+	$current_guid = url_to_postid(get_the_permalink());
+?>
+
 <header class="header">
 	<div class="container">
 		<div class="row">
@@ -11,30 +17,10 @@
 				</div>
 			</div>
 			<div class="col-12 col-xl-4">
-				<nav class="navigation left-nav">
-					<ul class="navlist">
-						<li class="navitem">
-							<a href="#" class="navlink">Головна</a>
-						</li>
-						<li class="navitem">
-							<ul class="navlist">
-								<li class="navitem">
-									<a href="#" class="navlink">Мед</a>
-								</li>
-								<li class="navitem">
-									<a href="#" class="navlink">Пилок</a>
-								</li>
-								<li class="navitem">
-									<a href="#" class="navlink">Свічки</a>
-								</li>
-								<li class="navitem">
-									<a href="#" class="navlink">Подарункові набори</a>
-								</li>
-							</ul>	
 
-							<a href="#" class="navlink">Наша продукція</a>
-						</li>
-					</ul>
+				<nav class="navigation left-nav">
+					<? if(!function_exists('render_navlist')) $this -> join('layouts/navlist'); ?>
+					<? render_navlist($nav_items_left) ?>
 				</nav>
 			</div>
 
@@ -64,32 +50,9 @@
 				</button>
 
 				<nav class="navigation right-nav">
-					<ul class="navlist">
-						<li class="navitem">
-							<a href="#" class="navlink">Контакти</a>
-						</li>
-						<li class="navitem">
-							<a href="#" class="navlink">Про нас</a>
-						</li>
-						<li class="navitem">
-							<a href="#" class="navlink">Відгуки</a>
-						</li>
-					</ul>
+					<? render_navlist($nav_items_right) ?>
 				</nav>
 			</div>
 		</div>		
 	</div>
 </header>
-
-<?
-	// $nav_items = get_navitems('main');			
-	// $current_guid = url_to_postid(get_the_permalink());
-	// if(!function_exists('render_navlist')) 
-	// 	$this -> join('layouts/navlist');
-?>
-
-		<!-- <nav class="navigation"> -->
-			<? //if(is_array($nav_items) and count($nav_items)): ?>
-				<?// render_navlist($nav_items); ?>
-			<? //endif ?>
-		<!-- </nav> -->
