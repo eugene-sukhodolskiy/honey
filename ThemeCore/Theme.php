@@ -20,7 +20,8 @@ class Theme{
 				[
 					'header-left' => 'Header left side',
 					'header-right' => 'Header right side',
-					'footer' => 'Footer nav'
+					'footer' => 'Footer nav',
+					'social' => 'Social links'
 				]
 			);
 		});

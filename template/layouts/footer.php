@@ -9,6 +9,7 @@
 		$call_time = get_post_meta($cpost -> ID, 'time_to_call');
 
 		$nav_items_footer = get_navitems('footer');
+		$nav_items_social = get_navitems('social');
 	?>
 
 	<footer class="footer">
@@ -24,10 +25,15 @@
 					</nav>
 
 					<ul class="contact-links">
-						<li><a href="#" class="soc-link telegram"></a></li>
-						<li><a href="#" class="soc-link viber"></a></li>
-						<li><a href="#" class="soc-link instagram"></a></li>
-						<li><a href="#" class="soc-link facebook"></a></li>
+						<? foreach ($nav_items_social as $i => $item): ?>
+							<li>
+								<a 
+									href="<?= $item -> url ?>" 
+									target="_blank" 
+									class="soc-link <?= $item -> title ?>"
+								></a>
+							</li>
+						<? endforeach ?>
 					</ul>
 				</div>
 				<div class="col-md-5 col-lg-4 col-xl-3">
