@@ -1,8 +1,14 @@
 <div class="weight-selector">
 	<? foreach($weights as $weight): ?>
-		<div class="weight <? if($weight['selected'] === true) echo 'selected'; ?>" data-value="<?= $weight['val'] ?>">
+		<? if(isset($weight['url']) and $weight['url']): ?>
+			<a href="<?= $weight['url'] ?>" class="no-style">
+		<? endif ?>
+		<div class="weight <? if(isset($weight['selected']) and $weight['selected']) echo 'selected'; ?>" data-value="<?= $weight['val'] ?>">
 			<span class="value"></span> 
 		</div> 
+		<? if(isset($weight['url']) and $weight['url']): ?>
+			</a>
+		<? endif ?>
 	<? endforeach ?>
 	<span class="unit">грамм</span>
 </div>

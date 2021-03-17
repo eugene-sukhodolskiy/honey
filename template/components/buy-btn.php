@@ -1,4 +1,7 @@
-<button class="button <?= isset($addition_class) ? $addition_class : '' ?> buy">
+<button 
+	class="button <?= isset($addition_class) ? $addition_class : '' ?> buy"
+	data-product-id="<?= $product_id ?>"
+>
 	<?= $btntext ?>
 	<span class="buy-control" data-value="1" data-max="10">
 		<span class="control-minus">

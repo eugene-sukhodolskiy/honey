@@ -17,6 +17,9 @@ class TemplateController{
 		elseif(is_page('contacts')){
 			return $this -> contacts_page();
 		}
+		elseif(is_product()){
+			return $this -> single_product();
+		}
 		elseif(is_product_category()){
 			return $this -> product_list();
 		}
@@ -78,6 +81,12 @@ class TemplateController{
 		return get_template_ins() -> make('pages/product-list', [
 			'cat' => $this -> wp_query -> posts[0],
 			'products' => $products
+		]);
+	}
+
+	public function single_product(){
+		return get_template_ins() -> make('pages/single-product', [
+			'product' => wc_get_product()
 		]);
 	}
 }

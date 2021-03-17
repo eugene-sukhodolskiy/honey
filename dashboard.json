@@ -19,6 +19,7 @@
 	"status": "open",
 	"project_color": "#e89700",
 	"links": {
+		"admin_panel": "http://honey.local/wp-admin",
 		"html_elements": "https://eugene-sukhodolskiy.github.io/honey/html/build/elements.html",
 		"html_home": "https://eugene-sukhodolskiy.github.io/honey/html/build/index.html",
 		"html_contacts": "https://eugene-sukhodolskiy.github.io/honey/html/build/contacts.html",

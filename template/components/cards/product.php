@@ -1,11 +1,10 @@
 <?
 	$regular_price = $product -> get_regular_price();
 	$sale_price = $product -> get_sale_price();
-	$percent = $sale_price ? 100 - $sale_price / $regular_price * 100 : 0;
+	$percent = $sale_price ? round(100 - $sale_price / $regular_price * 100) : 0;
 	$weight = $product -> get_weight() * 1000;
-	list($first_tag) = explode(',', wc_get_product_tag_list($product -> get_id(), ','));
-
 	list($is_new_prod) = get_post_meta($product -> get_id(), 'it_new_prod');
+	$currency = str_replace('UAH', 'грн', get_woocommerce_currency());
 ?>
 
 <div class="product-card">
@@ -36,12 +35,12 @@
 		<div class="product-price">
 			<span class="current">
 				<span class="val"><?= $sale_price ? $sale_price : $regular_price; ?></span>
-				<span class="currency">грн</span>
+				<span class="currency"><?= $currency ?></span>
 			</span>
 			<? if($sale_price): ?>
 				<span class="old">
 					<span class="val"><?= $regular_price ?></span>
-					<span class="currency">грн</span>
+					<span class="currency"><?= $currency ?></span>
 				</span>
 			<? endif ?>
 
@@ -54,6 +53,7 @@
 		</div>
 		<div class="btns">
 			<?= $this -> join('components/buy-btn', [
+				'product_id' => $product -> get_id(),
 				'btntext' => 'Купить',
 			]) ?>
 		</div>
