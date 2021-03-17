@@ -45,7 +45,7 @@ class TemplateController{
 	}
 
 	public function article_single(){
-		return get_template_ins() -> make('pages/article-single', ['post' => $this -> wp_query -> posts[0]]);
+		return get_template_ins() -> make('pages/single-page', ['post' => $this -> wp_query -> posts[0]]);
 	}
 
 	public function contacts_page(){
@@ -55,6 +55,6 @@ class TemplateController{
 
 	public function simple_single_page(){
 		$post = $this -> wp_query -> posts[0];
-		return get_template_ins() -> make('pages/simple-page', ['post' => $post]);
+		return get_template_ins() -> make('pages/single-page', ['post' => $post]);
 	}
 }
