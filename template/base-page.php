@@ -4,4 +4,5 @@
 
 <?= $this -> content() ?>
 
+<?= $this -> join('components/insta') ?>
 <?= $this -> join('layouts/footer') ?>

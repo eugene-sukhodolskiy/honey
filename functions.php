@@ -1,6 +1,6 @@
 <?php
 
-$theme_name = "ukrmagic-redesign";
+define('THEME_NAME', 'honey');
 
 include __DIR__ . "/ThemeCore/__autoload.php";
 include __DIR__ . "/ThemeCore/tools.php";
