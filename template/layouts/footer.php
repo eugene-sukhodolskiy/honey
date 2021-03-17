@@ -7,6 +7,8 @@
 		$address = get_post_meta($cpost -> ID, 'address');
 		$email = get_post_meta($cpost -> ID, 'email');
 		$call_time = get_post_meta($cpost -> ID, 'time_to_call');
+
+		$nav_items_footer = get_navitems('footer');
 	?>
 
 	<footer class="footer">
@@ -17,20 +19,8 @@
 				</div>
 				<div class="col-md-7 col-lg-8 col-xl-6">
 					<nav class="navigation">
-						<ul class="navlist">
-							<li class="navitem">
-								<a href="#" class="navlink">Контакти</a>
-							</li>
-							<li class="navitem">
-								<a href="#" class="navlink">Про нас</a>
-							</li>
-							<li class="navitem">
-								<a href="#" class="navlink">Відгуки</a>
-							</li>
-							<li class="navitem">
-								<a href="#" class="navlink">Доставка</a>
-							</li>
-						</ul>
+						<? if(!function_exists('render_navlist')) $this -> join('layouts/navlist'); ?>
+						<? render_navlist($nav_items_footer) ?>
 					</nav>
 
 					<ul class="contact-links">
