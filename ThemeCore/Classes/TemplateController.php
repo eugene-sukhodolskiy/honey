@@ -72,12 +72,13 @@ class TemplateController{
 
 	public function product_list(){
 		$products = wc_get_products([
-			'limit' => 20,
+			'limit' => 40,
 			'orderby' => 'date',
     	'order' => 'DESC',
     	'page' => 1,
     	'category' => [ $this -> wp_query -> posts[0] -> post_name ]
 		]);
+		
 		return get_template_ins() -> make('pages/product-list', [
 			'cat' => $this -> wp_query -> posts[0],
 			'products' => $products
