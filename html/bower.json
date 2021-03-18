@@ -19,6 +19,7 @@
     "normalize.css": "latest",
     "bootstrap": "latest",
     "jquery": "latest",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "ionicons": "latest"
   }
 }

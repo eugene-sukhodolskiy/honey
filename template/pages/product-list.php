@@ -23,8 +23,6 @@
 					]) ?>
 				</div>
 			<?php endforeach ?>
-
-			<? //dd($products[0] -> get_name()) ?>
 		</div>
 	</div>
 </div>

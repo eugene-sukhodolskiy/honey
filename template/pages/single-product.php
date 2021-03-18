@@ -8,6 +8,7 @@
 	$currency = str_replace('UAH', 'грн', get_woocommerce_currency());
 
 
+	// alt weights
 	$alt_weights = get_field('alt_weights');
 	$weights = [
 		[
@@ -79,6 +80,8 @@
 	</div>
 
 	<div class="container">
-		@@include('./template/recommended-products.html')	
+		<?= $this -> join('components/buy-together', [
+			'current_product' => $product
+		]) ?>
 	</div>
 </div>
