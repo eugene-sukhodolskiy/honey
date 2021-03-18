@@ -3,3 +3,4 @@
 
 <?= $this -> join('components/carousel') ?>
 <?= $this -> join('components/cats') ?>
+<?= $this -> join('components/hot-products') ?>
