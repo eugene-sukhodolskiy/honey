@@ -30,6 +30,8 @@
 		return $item1['val'] < $item2['val'];
 	});
 
+	$composition = get_field('composition');
+
 ?>
 
 <div class="page-wrap single-product-page">
@@ -52,6 +54,14 @@
 							'weights' => $weights
 						]) ?>
 					</div>
+
+					<? if($composition and strlen($composition)): ?>
+						<div class="composition">
+							<h3 class="heading">Склад:</h3>
+							<?= $composition ?>
+						</div>
+					<? endif ?>
+					
 				</div>
 				<div class="row price-and-buy-container">
 					<div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
