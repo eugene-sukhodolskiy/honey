@@ -1,5 +1,6 @@
 .carousel{
 	@carousel-height: 465px;
+	@carousel-mob-height: 70vh;
 
 	width: 100%;
 	height: @carousel-height;
@@ -9,6 +10,15 @@
 		width: 100%;
 		object-fit: cover;
 		object-position: center;
+	}
+
+	&.mob{
+		display: none;
+		height: @carousel-mob-height;
+
+		.slide-img{
+			height: @carousel-mob-height;
+		}
 	}
 
 	.slick-arrow{
@@ -98,6 +108,7 @@
 
 	.carousel{
 		height: @carousel-height;
+		display: none;
 
 		.slide-img{
 			height: @carousel-height;
@@ -105,6 +116,10 @@
 
 		.slick-arrow{
 			display: none !important;
+		}
+
+		&.mob{
+			display: block;
 		}
 	}
 }
