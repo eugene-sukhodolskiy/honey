@@ -37,6 +37,7 @@
 		<div class="row">
 			<div class="col-12 col-lg-5 col-xl-5">
 				<div class="product-img-container">
+					<div class="bubl">-<?= $percent ?>%</div>
 					<?= str_replace('class="', 'class="product-img ', $product -> get_image('medium')) ?>
 				</div>
 			</div>
