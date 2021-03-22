@@ -41,11 +41,39 @@ $insta_posts = $insta -> get_insta_posts($insta_account, $count_insta_posts);
 <script>
 	$(document).ready(function(){
 		$('.post-carousel').slick({
-			slidesToShow: 5,
+			slidesToShow: 9,
 			slidesToScroll: 1,
 			arrows: false,
 			dots: false,
 			responsive: [
+				{
+					breakpoint: 3200,
+					settings: {
+						slidesToShow: 8,
+						slidesToScroll: 1,
+					}
+				},
+				{
+					breakpoint: 2800,
+					settings: {
+						slidesToShow: 7,
+						slidesToScroll: 1,
+					}
+				},
+				{
+					breakpoint: 2400,
+					settings: {
+						slidesToShow: 6,
+						slidesToScroll: 1,
+					}
+				},
+				{
+					breakpoint: 2000,
+					settings: {
+						slidesToShow: 5,
+						slidesToScroll: 1,
+					}
+				},
 				{
 					breakpoint: 1400,
 					settings: {

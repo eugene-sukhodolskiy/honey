@@ -18,17 +18,19 @@
 		]
 	];
 
-	foreach($alt_weights as $p){
-		$p = wc_get_product($p -> ID);
-		$weights[] = [
-			'val' => floatval($p -> get_weight()), 
-			'url' => $p -> get_permalink()
-		];
-	}
+	if(is_array($alt_weights)){
+		foreach($alt_weights as $p){
+			$p = wc_get_product($p -> ID);
+			$weights[] = [
+				'val' => floatval($p -> get_weight()), 
+				'url' => $p -> get_permalink()
+			];
+		}
 
-	usort($weights, function($item1, $item2){
-		return $item1['val'] < $item2['val'];
-	});
+		usort($weights, function($item1, $item2){
+			return $item1['val'] < $item2['val'];
+		});
+	}
 
 	$composition = get_field('composition');
 
@@ -61,7 +63,7 @@
 							<?= $composition ?>
 						</div>
 					<? endif ?>
-					
+
 				</div>
 				<div class="row price-and-buy-container">
 					<div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
