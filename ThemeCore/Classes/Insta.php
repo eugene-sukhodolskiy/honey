@@ -55,9 +55,14 @@ class Insta{
 	}
 
 	public function force_recache($account){
-		$insta_url = 'https://instagram.com/' . $account . '/?__a=1';
+		// $insta_url = 'https://instagram.com/' . $account . '/?__a=1';
+		$insta_url = 'https://instagram.com/' . $account;
 		// $raw_response = \https_request($insta_url);
-		$raw_response = file_get_contents($insta_url);
+		// $raw_response = file_get_contents($insta_url);
+		$response_html = file_get_contents($insta_url);
+		$arr = explode('window._sharedData = ', $response_html);
+		$json = explode(';</script>', $arr[1]);
+		$raw_response = $json[0];
 		$this -> set_cache($account, $raw_response);
 
 		return $raw_response;
@@ -66,7 +71,8 @@ class Insta{
 	public function get_insta_posts($account, $count = 10){
 		$raw_response = $this -> get_raw_response($account);
 		$data = json_decode($raw_response, true);
-		$nodes = $data['graphql']['user']['edge_owner_to_timeline_media']['edges'];
+		// $nodes = $data['graphql']['user']['edge_owner_to_timeline_media']['edges'];
+		$nodes = $data['entry_data']['ProfilePage'][0]['graphql']['user']['edge_owner_to_timeline_media']['edges'];
 
 		return array_filter($this -> picking($nodes), function($item, $inx) use($count) {
 			return $inx < $count;
