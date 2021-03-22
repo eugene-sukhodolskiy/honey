@@ -61,7 +61,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-12 col-lg-4 col-xl-4">
-						<a href="#">Політика конфіденційності</a>
+						<a href="/privacy/">Політика конфіденційності</a>
 					</div>
 					<div class="col-12 col-lg-4 col-xl-4 copyright">
 						&copy; 2021

@@ -56,6 +56,7 @@ class Insta{
 
 	public function force_recache($account){
 		$insta_url = 'https://instagram.com/' . $account . '/?__a=1';
+		// $raw_response = \https_request($insta_url);
 		$raw_response = file_get_contents($insta_url);
 		$this -> set_cache($account, $raw_response);
 
