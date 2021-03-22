@@ -4,6 +4,7 @@
 
 	width: 100%;
 	height: @carousel-height;
+	cursor: pointer;
 
 	.slide-img{
 		height: @carousel-height;
@@ -115,7 +116,15 @@
 		}
 
 		.slick-arrow{
-			display: none !important;
+			// display: none !important;
+			
+			&.slick-next{
+				right: 20px;
+			}
+
+			&.slick-prev{
+				left: 20px;
+			}
 		}
 
 		&.mob{
