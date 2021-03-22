@@ -3,7 +3,7 @@
 	$sale_price = $product -> get_sale_price();
 	$percent = $sale_price ? round(100 - $sale_price / $regular_price * 100) : 0;
 	$weight = $product -> get_weight() * 1000;
-	list($is_new_prod) = get_post_meta($product -> get_id(), 'it_new_prod');
+	$prod_label = get_post_meta($product -> get_id(), 'prod_label');
 	$currency = str_replace('UAH', 'грн', get_woocommerce_currency());
 ?>
 
@@ -13,9 +13,9 @@
 			<div class="bubl">-<?= $percent ?>%</div>
 		<? endif ?>
 
-		<? if($is_new_prod): ?>
+		<? if(is_array($prod_label) and count($prod_label) and strlen($prod_label[0])): ?>
 			<div class="product-label">
-				Новинка
+				<?= $prod_label[0] ?>
 			</div>
 		<? endif ?>
 
