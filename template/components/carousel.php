@@ -23,40 +23,27 @@
 
 <div class="carousel">
 	<?php foreach ($slides as $i => $slide): ?>
-		<img src="<?= $slide ?>" class="slide-img" alt="" data-href="<?= $slides_link[$i] ?>">
+		<a href="<?= $slides_link[$i] ?>">
+			<img src="<?= $slide ?>" class="slide-img" alt="">
+		</a>
 	<?php endforeach ?>
 </div>
 
 <div class="carousel mob">
 	<?php foreach ($slides_mob as $i => $slide): ?>
-		<img src="<?= $slide ?>" class="slide-img" alt="" data-href="<?= $slides_link[$i] ?>">
+		<a href="<?= $slides_link[$i] ?>">
+			<img src="<?= $slide ?>" class="slide-img" alt="">
+		</a>
 	<?php endforeach ?>
 </div>
 
 <script>
-	var ctimer = 0;
-
 	$(document).ready(function(){
 		$('.carousel').slick({
 			dots: true,
 			arows: true,
 			autoplay: true,
   		autoplaySpeed: 5000
-		});
-
-		$('.carousel [data-href]').on('mousedown', function(){
-			ctimer = new Date().getTime();
-		});
-
-		$('.carousel [data-href]').on('mouseup', function(){
-			if(new Date().getTime() - ctimer > 200){	
-				return false;
-			}
-
-			const url = $(this).attr('data-href');
-			if(url.length > 3){
-				document.location = url;
-			}
 		});
 	});
 </script>
