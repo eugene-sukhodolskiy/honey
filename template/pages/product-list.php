@@ -15,10 +15,6 @@
 		return $item1 < $item2;
 	});
 
-	if($selected_weight < 0){
-		$weights[0]['selected'] = true;
-		$selected_weight = $weights[0]['val'];
-	}
 ?>
 
 <div class="page-wrap products-page">
@@ -34,7 +30,7 @@
 			</div> 
 
 			<?php foreach ($products as $i => $product): ?>
-				<? if($selected_weight > 0 and $product -> get_weight() != $selected_weight) continue; ?>
+				<? if($selected_weight >= 0 and $product -> get_weight() != $selected_weight) continue; ?>
 				<div class="col-6 col-lg-4 col-xl-3 product-line-item">
 					<?= $this -> join('components/cards/product', [
 						'product' => $product

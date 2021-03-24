@@ -75,7 +75,7 @@ class TemplateController{
 
 	public function product_list(){
 		$products = wc_get_products([
-			'limit' => 40,
+			'limit' => 80,
 			'orderby' => 'date',
     	'order' => 'DESC',
     	'page' => 1,
