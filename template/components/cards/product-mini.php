@@ -8,7 +8,7 @@
 	$quantity = isset($quantity) ? $quantity : 1;
 ?>
 
-<div class="product-card">
+<div class="product-card mini" data-item-key="<?= $item_key ?>">
 	<div class="product-head">
 		<? if($percent): ?>
 			<div class="bubl">-<?= $percent ?>%</div>
@@ -19,10 +19,9 @@
 				<?= $prod_label[0] ?>
 			</div>
 		<? endif ?>
-
 		<div class="product-thumb">
 			<a href="<?= $product -> get_permalink() ?>" class="no-style">
-				<?= str_replace('class="', 'class="product-pic ', $product -> get_image('large')) ?>
+				<?= str_replace('class="', 'class="product-pic ', $product -> get_image('medium')) ?>
 			</a>
 		</div>
 	</div>
@@ -32,10 +31,11 @@
 				<?= $product -> get_name() ?>
 			</a>
 		</h3>
-		
 		<div class="product-price">
 			<span class="current">
-				<span class="val"><?= $sale_price ? $sale_price : $regular_price; ?></span>
+				<span class="val">
+					<?= $sale_price ? $sale_price : $regular_price; ?>
+				</span>
 				<span class="currency"><?= $currency ?></span>
 			</span>
 			<? if($sale_price): ?>
@@ -55,9 +55,14 @@
 		<div class="btns">
 			<?= $this -> join('components/buy-btn', [
 				'product_id' => $product -> get_id(),
-				'btntext' => 'Купити',
-				'quantity' => $quantity
+				'btntext' => '',
+				'addition_class' => 'sm',
+				'quantity' => $quantity,
+				'no_click' => true
 			]) ?>
+			<button class="button-cancel" data-item-key="<?= $item_key ?>">
+				<ion-icon name="close-circle-outline"></ion-icon>
+			</button>
 		</div>
 	</div>
 </div>

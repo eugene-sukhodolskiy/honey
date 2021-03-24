@@ -17,7 +17,7 @@
 				<?= $post -> post_title ?>
 			</h1>
 			<div class="content">
-				<?= $post -> post_content ?>
+				<?= do_shortcode($post -> post_content) ?>
 			</div>
 		</div>
 	</div>

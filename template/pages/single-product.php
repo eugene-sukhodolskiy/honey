@@ -33,6 +33,7 @@
 	}
 
 	$composition = get_field('composition');
+	$prod_label = get_post_meta($product -> get_id(), 'prod_label');
 
 ?>
 
@@ -41,8 +42,16 @@
 		<div class="row">
 			<div class="col-12 col-lg-5 col-xl-5">
 				<div class="product-img-container">
-					<div class="bubl">-<?= $percent ?>%</div>
+					<? if($percent > 0): ?>
+						<div class="bubl">-<?= $percent ?>%</div>
+					<? endif ?>
+					<? if(is_array($prod_label) and count($prod_label) and strlen($prod_label[0])): ?>
+						<div class="product-label">
+							<?= $prod_label[0] ?>
+						</div>
+					<? endif ?>
 					<?= str_replace('class="', 'class="product-img ', $product -> get_image('full')) ?>
+
 				</div>
 			</div>
 			<div class="col-12 col-lg-7 col-xl-7">
@@ -84,7 +93,8 @@
 							<?= $this -> join('components/buy-btn', [
 								'product_id' => $product -> get_id(),
 								'btntext' => 'Купить',
-								'addition_class' => 'lg'
+								'addition_class' => 'lg',
+								'quantity' => 1
 							]) ?>
 						</div>
 					</div>

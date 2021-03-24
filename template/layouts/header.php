@@ -33,11 +33,13 @@
 			</div>
 
 			<div class="col-12 col-xl-4">
-				<a href="#" class="basket-button">
+				<a href="/cu-cart" class="basket-button">
 					<span class="icon-container">
 						<ion-icon name="bag-handle-outline" class="basket-icon"></ion-icon>
 					</span>
-					<span class="counter">6</span>
+					<span class="counter">
+						<?= \WC() -> cart -> cart_contents_count ?>
+					</span>
 				</a>
 
 				<button class="menu" data-state="close">

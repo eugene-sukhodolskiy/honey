@@ -5,7 +5,7 @@ namespace ThemeCore\Classes;
 class Insta{
 	protected $max_life;
 
-	public function __construct($max_life = 60 * 60){ // 60 minutes
+	public function __construct($max_life = 60 * 60 * 600){ // 60 minutes
 		$this -> max_life = $max_life;
 	}
 
@@ -57,9 +57,10 @@ class Insta{
 	public function force_recache($account){
 		// $insta_url = 'https://instagram.com/' . $account . '/?__a=1';
 		$insta_url = 'https://instagram.com/' . $account;
-		// $raw_response = \https_request($insta_url);
+		$response_html = \https_request($insta_url);
+		dd($response_html);
 		// $raw_response = file_get_contents($insta_url);
-		$response_html = file_get_contents($insta_url);
+		// $response_html = file_get_contents($insta_url);
 		$arr = explode('window._sharedData = ', $response_html);
 		$json = explode(';</script>', $arr[1]);
 		$raw_response = $json[0];

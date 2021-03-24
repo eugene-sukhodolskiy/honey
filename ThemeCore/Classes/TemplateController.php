@@ -17,6 +17,9 @@ class TemplateController{
 		elseif(is_page('contacts')){
 			return $this -> contacts_page();
 		}
+		elseif(is_page('cu-cart')){
+			return $this -> custom_cart();
+		}
 		elseif(is_product()){
 			return $this -> single_product();
 		}
@@ -88,6 +91,21 @@ class TemplateController{
 	public function single_product(){
 		return get_template_ins() -> make('pages/single-product', [
 			'product' => wc_get_product()
+		]);
+	}
+
+	public function custom_cart(){
+		global $woocommerce;
+    $products = $woocommerce -> cart -> get_cart();
+    $products = array_map(function($item){
+    	return [
+    		'product_cart' => $item, 
+    		'product' => wc_get_product($item['product_id'])
+    	];
+    }, $products);
+
+		return get_template_ins() -> make('pages/cart', [
+			'products_sets' => $products
 		]);
 	}
 }
