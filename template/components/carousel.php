@@ -34,6 +34,8 @@
 </div>
 
 <script>
+	var ctimer = 0;
+
 	$(document).ready(function(){
 		$('.carousel').slick({
 			dots: true,
@@ -42,7 +44,15 @@
   		autoplaySpeed: 5000
 		});
 
-		$('.carousel [data-href]').on('click', function(){
+		$('.carousel [data-href]').on('mousedown', function(){
+			ctimer = new Date().getTime();
+		});
+
+		$('.carousel [data-href]').on('mouseup', function(){
+			if(new Date().getTime() - ctimer > 200){	
+				return false;
+			}
+
 			const url = $(this).attr('data-href');
 			if(url.length > 3){
 				document.location = url;
