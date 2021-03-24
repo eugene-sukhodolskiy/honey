@@ -29,7 +29,7 @@
 		</div>
 		<div class="input-group">
 			<label>
-				<span class="label-text">Вiддiленя *</span>
+				<span class="label-text">Відділення *</span>
 				<input type="number" name="num" class="input" step="1" min="1" value="1" placeholder="Вiддiленя *" required="">
 			</label>
 		</div>
@@ -76,7 +76,7 @@
 	<div class="input-group">
 		<select name="billing_payment_method" id="" class="input">
 			<option value="На карту приват банка">На карту приват банка</option>
-			<option value="Наложенний">Наложенний</option>
+			<option value="Оплата при отриманні" data-floating="">Оплата при отриманні</option>
 			<option value="Готівкою">Готівкою</option>
 		</select>
 	</div>
@@ -129,9 +129,16 @@
 			const methodSelect = $(this);
 			const method = methodSelect.val();
 			const formGroup = form.find(`.delivery-form-group.${method}-group`);
+			const floatingBillingMethod = form.find('[data-floating]');
+
 			shippingMethodValue.val(methodSelect.find(`[value="${methodSelect.val()}"`).html());
 			formGroup.find('.input').attr('required', '');
 			formGroup.show();
+			if(method == 'self'){
+				floatingBillingMethod.hide();
+			}else{
+				floatingBillingMethod.show();
+			}
 		});
 
 		form.on('submit', function(e){

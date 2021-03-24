@@ -92,7 +92,7 @@
 						<div class="buy">
 							<?= $this -> join('components/buy-btn', [
 								'product_id' => $product -> get_id(),
-								'btntext' => 'Купить',
+								'btntext' => 'Купити',
 								'addition_class' => 'lg',
 								'quantity' => 1
 							]) ?>

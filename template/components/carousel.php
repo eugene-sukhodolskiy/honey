@@ -23,7 +23,7 @@
 
 <div class="carousel">
 	<?php foreach ($slides as $i => $slide): ?>
-		<a href="<?= $slides_link[$i] ?>">
+		<a href="<?= $slides_link[$i] ? $slides_link[$i] : '#' ?>">
 			<img src="<?= $slide ?>" class="slide-img" alt="">
 		</a>
 	<?php endforeach ?>
@@ -31,7 +31,7 @@
 
 <div class="carousel mob">
 	<?php foreach ($slides_mob as $i => $slide): ?>
-		<a href="<?= $slides_link[$i] ?>">
+		<a href="<?= $slides_link[$i] ? $slides_link[$i] : '#' ?>">
 			<img src="<?= $slide ?>" class="slide-img" alt="">
 		</a>
 	<?php endforeach ?>

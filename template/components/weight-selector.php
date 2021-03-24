@@ -10,7 +10,7 @@
 			</a>
 		<? endif ?>
 	<? endforeach ?>
-	<span class="unit">грамм</span>
+	<span class="unit">грам</span>
 </div>
   
 <script>
