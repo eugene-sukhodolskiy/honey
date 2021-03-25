@@ -20,6 +20,9 @@ class TemplateController{
 		elseif(is_page('cu-cart')){
 			return $this -> custom_cart();
 		}
+		elseif(is_page('reviews')){
+			return $this -> reviews();
+		}
 		elseif(is_product()){
 			return $this -> single_product();
 		}
@@ -105,7 +108,33 @@ class TemplateController{
     }, $products);
 
 		return get_template_ins() -> make('pages/cart', [
-			'products_sets' => $products
+			'products_sets' => $products,
+			'post' => $this -> wp_query -> posts[0]
+		]);
+	}
+
+	public function reviews(){
+		$reviews = get_posts([
+			'post_type' => 'review',
+			'numberposts' => 30,
+			'orderby' => 'date',
+			'order' => 'DESC'
+		]);
+
+		$reviews = array_map(function($review){
+			return [
+				'id' => $review -> ID,
+				'nickname' => get_field('nickname', $review -> ID),
+				'insta_account_link' => get_field('insta_account_link', $review -> ID),
+				'review_timestamp' => get_field('review_timestamp', $review -> ID),
+				'avatar' => get_field('avatar', $review -> ID),
+				'screenshot' => get_field('screenshot', $review -> ID)
+			];
+		}, $reviews);
+
+		return get_template_ins() -> make('pages/reviews', [
+			'reviews' => $reviews,
+			'post' => $this -> wp_query -> posts[0]
 		]);
 	}
 }

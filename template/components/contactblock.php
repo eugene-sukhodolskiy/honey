@@ -1,6 +1,6 @@
 <div class="contact-form">
 	<h3 class="title">Напиши нам прямо зараз</h3>
-	<form action="" id="contact" method="post">
+	<form action="/wp-admin/admin-ajax.php" id="contact" method="post">
 		<div class="notification">
 			<h3 class="msg">Дякую за ваш меседж</h3>
 			<ion-icon name="happy-outline"></ion-icon>
@@ -36,23 +36,21 @@
 
 			form.on('submit', function(e){
 				e.preventDefault();
-				let data = new FormData(this);
+				let data = form.serializeArray();
 				
-				notification.addClass('show');
-				setTimeout(function(){
-					notification.removeClass('show');
-					inputs.val('');
-				}, 3000);
-				// $.ajax({
-				// 	method: method,
-				// 	url: url,
-				// 	data: data
-				// }).done(function(){
-				// 	console.log('Done');
-				// 	notification.addClass('show');
-				// }).failed(function(){
-				// 	console.log('Failed');
-				// });
+				// notification.addClass('show');
+
+				$.post(url, {
+					action: 'contactblock',
+					data: data
+				}, function(resp){
+					notification.addClass('show');
+
+					setTimeout(function(){
+						notification.removeClass('show');
+						inputs.val('');
+					}, 3000);
+				});
 			});
 		});
 	</script>

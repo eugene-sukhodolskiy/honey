@@ -4,7 +4,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
-				<h3 class="page-title">БУДЬ ЛАСКА, ЗАПОВНІТЬ КОНТАКТНУ ФОРМУ</h3>
+				<h3 class="page-title"><?= $post -> post_title ?> </h3>
 			</div>
 			<div class="col-12 col-lg-6 col-xl-7 order-2 order-lg-1 order-xl-1">
 				<div class="form-container">
@@ -68,5 +68,12 @@
 		</div>
 	</div>
 
-	<!-- @@include('./template/recommended-products.html') -->
+	<?= $this -> join('components/hot-products', ['post' => $post]) ?>
+	<script>
+		$(document).ready(function(){
+			$('.recommended-products .buy').on('click', function(){
+				
+			});
+		});
+	</script>
 </div>

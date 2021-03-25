@@ -3,11 +3,14 @@
 namespace ThemeCore;
 
 use \ThemeCore\Classes\AjaxController;
+use \ThemeCore\Classes\RegisterReviewType;
 
 class Theme{
 	public $ajax_controller;
 
 	public function __construct(){
+		$review_type = new RegisterReviewType();
+		$ajax = new AjaxController();
 		$this -> setup();
 	}
 
@@ -82,6 +85,9 @@ class Theme{
 		add_action( 'wp_ajax_nopriv_ajax_order', function(){
 			$this -> submited_ajax_order_data();
 		});
+
+		add_filter( 'jetpack_sharing_counts', '__return_false', 99 );
+		add_filter( 'jetpack_implode_frontend_css', '__return_false', 99 );
 	}
 
 	public function render_custom_settings(){
