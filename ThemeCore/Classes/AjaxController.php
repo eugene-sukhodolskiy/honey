@@ -7,6 +7,9 @@ class AjaxController{
 		add_action('admin_init', function(){
 			add_action('wp_ajax_contactblock', [$this, 'contactblock'], 1);
 			add_action('wp_ajax_nopriv_contactblock', [$this, 'contactblock'], 1);
+
+			add_action('wp_ajax_insta_set_data', [$this, 'insta_set_data'], 1);
+			add_action('wp_ajax_nopriv_insta_set_data', [$this, 'insta_set_data'], 1);
 		});
 	}
 
@@ -22,5 +25,16 @@ class AjaxController{
 
 		mail($admin_email, 'Отправлено из контактной формы vichniy-med.com.ua', $message);
 		return die(true);
+	}
+
+	public function insta_set_data(){
+		$data = $_POST['data'];
+		$insta_account = get_option('insta_account');
+		$count_insta_posts = get_option('count_insta_posts');
+
+		$filename = __DIR__ . "/../../insta.{$insta_account}.cache";
+		echo $filename . "\n\n";
+		file_put_contents($filename, date()."\n".$data);
+		die(true);
 	}
 }

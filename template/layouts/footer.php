@@ -88,5 +88,20 @@
 			margin-top: 0 !important;
 		}
 	</style>
+
+	<script>
+		let url = "https://www.instagram.com/vichniy.med/";
+		$.ajax({
+	    type: 'GET',
+	    url: url,
+	    error: function () {
+	        //..
+	    },
+	    success: function (data) {
+	        // data = JSON.parse(data.split("window._sharedData = ")[1].split(";<\/script>")[0]).entry_data.ProfilePage[0].graphql;
+	        console.log(data);
+	    }
+		})	
+	</script>	
 </body>
 </html>

@@ -98,16 +98,16 @@ function translateMonthName($date_string){
 
 function https_request($url){ 
   $options = array(
-    CURLOPT_RETURNTRANSFER => true,     // return web page
-    CURLOPT_HEADER         => false,    // don't return headers
-    CURLOPT_FOLLOWLOCATION => true,     // follow redirects
-    CURLOPT_ENCODING       => "",       // handle all encodings
-    CURLOPT_USERAGENT      => "server", // who am i
-    CURLOPT_AUTOREFERER    => true,     // set referer on redirect
-    CURLOPT_CONNECTTIMEOUT => 120,      // timeout on connect
-    CURLOPT_TIMEOUT        => 120,      // timeout on response
-    CURLOPT_MAXREDIRS      => 10,       // stop after 10 redirects
-    CURLOPT_SSL_VERIFYPEER => false     // Disabled SSL Cert checks
+    \CURLOPT_RETURNTRANSFER => true,     // return web page
+    \CURLOPT_HEADER         => false,    // don't return headers
+    \CURLOPT_FOLLOWLOCATION => true,     // follow redirects
+    \CURLOPT_ENCODING       => "",       // handle all encodings
+    \CURLOPT_USERAGENT      => "server", // who am i
+    \CURLOPT_AUTOREFERER    => true,     // set referer on redirect
+    \CURLOPT_CONNECTTIMEOUT => 120,      // timeout on connect
+    \CURLOPT_TIMEOUT        => 120,      // timeout on response
+    \CURLOPT_MAXREDIRS      => 10,       // stop after 10 redirects
+    \CURLOPT_SSL_VERIFYPEER => false     // Disabled SSL Cert checks
   );
 
   $ch      = curl_init( $url );
