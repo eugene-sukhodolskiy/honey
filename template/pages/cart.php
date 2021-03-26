@@ -21,7 +21,8 @@
 								<?= $this -> join('components/cards/product-mini', [
 									'product' => $p_set['product'],
 									'quantity' => $p_set['product_cart']['quantity'],
-									'item_key' => $item_key
+									'item_key' => $item_key,
+									'with_weight' => get_field('with_weight', $p_set['product'] -> get_id())
 								]) ?>
 							</li>	
 						<? endforeach ?>

@@ -4,32 +4,35 @@
 	$regular_price = $product -> get_regular_price();
 	$sale_price = $product -> get_sale_price();
 	$percent = $sale_price ? round(100 - $sale_price / $regular_price * 100) : 0;
-	$weight = $product -> get_weight() * 1000;
 	$currency = str_replace('UAH', 'грн', get_woocommerce_currency());
+	$with_weight = get_field('with_weight');
 
+	if($with_weight or is_null($with_weight)){
+		$weight = $product -> get_weight() * 1000;
 
-	// alt weights
-	$alt_weights = get_field('alt_weights');
-	$weights = [
-		[
-			'val' => floatval($product -> get_weight()), 
-			'url' => $product -> get_permalink(),
-			'selected' => true
-		]
-	];
+		// alt weights
+		$alt_weights = get_field('alt_weights');
+		$weights = [
+			[
+				'val' => floatval($product -> get_weight()), 
+				'url' => $product -> get_permalink(),
+				'selected' => true
+			]
+		];
 
-	if(is_array($alt_weights)){
-		foreach($alt_weights as $p){
-			$p = wc_get_product($p -> ID);
-			$weights[] = [
-				'val' => floatval($p -> get_weight()), 
-				'url' => $p -> get_permalink()
-			];
+		if(is_array($alt_weights)){
+			foreach($alt_weights as $p){
+				$p = wc_get_product($p -> ID);
+				$weights[] = [
+					'val' => floatval($p -> get_weight()), 
+					'url' => $p -> get_permalink()
+				];
+			}
+
+			usort($weights, function($item1, $item2){
+				return $item1['val'] < $item2['val'];
+			});
 		}
-
-		usort($weights, function($item1, $item2){
-			return $item1['val'] < $item2['val'];
-		});
 	}
 
 	$composition = get_field('composition');
@@ -60,11 +63,14 @@
 					<div class="description">
 						<?= $product -> get_description() ?>
 					</div>
-					<div class="weight-container">
-						<?= $this -> join('components/weight-selector', [
-							'weights' => $weights
-						]) ?>
-					</div>
+
+					<? if($with_weight or is_null($with_weight)): ?>
+						<div class="weight-container">
+							<?= $this -> join('components/weight-selector', [
+								'weights' => $weights
+							]) ?>
+						</div>
+					<? endif ?>
 
 					<? if($composition and strlen($composition)): ?>
 						<div class="composition">

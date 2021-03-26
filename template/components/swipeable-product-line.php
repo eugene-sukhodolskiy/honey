@@ -11,7 +11,8 @@
 		<div class="products-carousel">
 			<? foreach($products as $i => $product): ?>
 				<?= $this -> join('components/cards/product', [
-					'product' => $product
+					'product' => $product,
+					'with_weight' => get_field('with_weight', $product -> get_id())
 				]) ?>
 			<? endforeach ?>
 		</div>

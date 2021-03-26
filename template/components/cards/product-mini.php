@@ -1,8 +1,13 @@
 <?
+	$with_weight = !isset($with_weight) ? true : $with_weight;
 	$regular_price = $product -> get_regular_price();
 	$sale_price = $product -> get_sale_price();
 	$percent = $sale_price ? round(100 - $sale_price / $regular_price * 100) : 0;
-	$weight = $product -> get_weight() * 1000;
+	
+	if($with_weight){
+		$weight = $product -> get_weight() * 1000;
+	}
+
 	$prod_label = get_post_meta($product -> get_id(), 'prod_label');
 	$currency = str_replace('UAH', 'грн', get_woocommerce_currency());
 	$quantity = isset($quantity) ? $quantity : 1;
@@ -45,12 +50,14 @@
 				</span>
 			<? endif ?>
 
-			<span class="sep">/</span>
+			<? if($with_weight and isset($weight)): ?>
+				<span class="sep">/</span>
 
-			<span class="weight">
-				<span class="val"><?= $weight ?></span>
-				<span class="unit">г</span>
-			</span>
+				<span class="weight">
+					<span class="val"><?= $weight ?></span>
+					<span class="unit">г</span>
+				</span>
+			<? endif ?>
 		</div>
 		<div class="btns">
 			<?= $this -> join('components/buy-btn', [

@@ -84,8 +84,11 @@ class TemplateController{
     	'page' => 1,
     	'category' => [ $this -> wp_query -> posts[0] -> post_name ]
 		]);
+
+		$with_weight = get_field('with_weight', $this -> wp_query -> posts[0] -> ID);
 		
-		return get_template_ins() -> make('pages/product-list', [
+		$template_name = $with_weight ? 'product-list-with-weight' : 'product-list';
+		return get_template_ins() -> make('pages/' . $template_name, [
 			'cat' => $this -> wp_query -> posts[0],
 			'products' => $products
 		]);

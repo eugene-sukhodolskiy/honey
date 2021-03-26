@@ -196,7 +196,7 @@ class Theme{
 			$data['billing_address_1'] = "Вул. {$data['street']}, дом {$data['building']}, кв {$data['apartment']}";
 			$data['shipping_address_1'] = $data['billing_address_1'];
 
-			$data['order_comments'] = "Способ доставки:\n{$data['shipping_method_value']} \n\nОплата:\n{$data['billing_payment_method']}\n\n" . $data['order_comments'];
+			$data['order_comments'] = "Способ доставки:\n{$data['shipping_method_value']}\n\nОтделение:\n{$data['shipping_num']}\n\n Оплата:\n{$data['billing_payment_method']}\n\nКомментарий к заказу:\n" . $data['order_comments'];
 
 			$cart_hash = md5( json_encode( wc_clean( $cart->get_cart_for_session() ) ) . $cart->total );
 			$available_gateways = \WC()->payment_gateways->get_available_payment_gateways();

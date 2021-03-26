@@ -30,7 +30,7 @@
 		<div class="input-group">
 			<label>
 				<span class="label-text">Відділення *</span>
-				<input type="number" name="num" class="input" step="1" min="1" value="1" placeholder="Вiддiленя *" required="">
+				<input type="number" name="shipping_num" class="input" step="1" min="1" value="1" placeholder="Вiддiленя *" required="">
 			</label>
 		</div>
 	</div>
